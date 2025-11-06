@@ -1,4 +1,4 @@
-export const questions = {
+ const questions = {
     // 🧩 ALFABETIZZAZIONE SU INFORMAZIONI E DATI — LIVELLO 1
     1: {
         domanda: "Che cos’è un browser?",
@@ -1764,7 +1764,8 @@ export const questions = {
         area: "Risoluzione dei problemi",
         livelloDifficolta: 5
     }
-}
+};
+module.exports = questions;
 
 
 
