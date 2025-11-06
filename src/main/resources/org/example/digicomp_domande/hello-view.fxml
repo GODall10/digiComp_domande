@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.digicomp_domande.HelloController">
+   <children>
+      <TextField fx:id="txtDomanda" editable="false" layoutX="70.0" layoutY="26.0" />
+      <RadioButton fx:id="radioButtona" layoutX="24.0" layoutY="91.0" mnemonicParsing="false" text="a" />
+      <RadioButton fx:id="radioButtonc" layoutX="25.0" layoutY="133.0" mnemonicParsing="false" text="c" />
+      <RadioButton fx:id="radioButtonb" layoutX="167.0" layoutY="91.0" mnemonicParsing="false" text="b" />
+      <RadioButton fx:id="radioButtond" layoutX="167.0" layoutY="133.0" mnemonicParsing="false" text="d" />
+      <Button fx:id="btnIndovina" layoutX="123.0" layoutY="161.0" mnemonicParsing="false" onMouseClicked="#indovina" text="indovina" />
+   </children>
+</AnchorPane>
