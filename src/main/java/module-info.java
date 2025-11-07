@@ -4,6 +4,7 @@ module org.example.digicomp_domande {
 
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
+    requires java.desktop;
 
     opens org.example.digicomp_domande to javafx.fxml;
     exports org.example.digicomp_domande;
