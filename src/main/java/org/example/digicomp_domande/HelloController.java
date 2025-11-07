@@ -20,6 +20,7 @@ public class HelloController {
     int gen4;
     int indexwin;
     String selezione;
+    String corretta;
     database db = new database();
     @FXML
     private Label welcomeText;
@@ -57,7 +58,7 @@ public class HelloController {
         answers.add(rispostesb[1]);
         answers.add(rispostesb[2]);
         Collections.shuffle(answers);
-        indexwin = answers.indexOf("risposta corretta");
+        corretta = db.rispostaCorr(1,1,1,1);
         System.out.println(answers);
         radioButtona.setText(answers.get(0));
         radioButtonb.setText(answers.get(1));
@@ -73,9 +74,30 @@ public class HelloController {
             System.out.println(toggleGroup.getSelectedToggle());
             if(radioButtona.isSelected()){
                 selezione = radioButtona.getText();
-                if(selezione.equals("risposta sbagliata")){
+                if(!selezione.equals(corretta)){
                     System.out.println("risposta sbagliata");
-                }else if(selezione.equals("risposta corretta")){
+                }else if(selezione.equals(corretta)){
+                    System.out.println("risposta corretta");
+                }
+            }else if(radioButtonb.isSelected()){
+                selezione = radioButtonb.getText();
+                if(!selezione.equals(corretta)){
+                    System.out.println("risposta sbagliata");
+                }else if(selezione.equals(corretta)){
+                    System.out.println("risposta corretta");
+                }
+            }else if (radioButtonc.isSelected()){
+                selezione = radioButtonc.getText();
+                if(!selezione.equals(corretta)){
+                    System.out.println("risposta sbagliata");
+                }else if(selezione.equals(corretta)){
+                    System.out.println("risposta corretta");
+                }
+            }else if (radioButtond.isSelected()){
+                selezione = radioButtond.getText();
+                if(!selezione.equals(corretta)){
+                    System.out.println("risposta sbagliata");
+                }else if(selezione.equals(corretta)){
                     System.out.println("risposta corretta");
                 }
             }
