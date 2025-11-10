@@ -33,15 +33,37 @@ public class Schermata_login {
     private void Register() throws IOException, SQLException {
         int result= db_login.controllaUtente(nome_login.getText(),pasword_login.getText());
         if(result==0) {
-            db_login.aggiungiUtente(nome_login.getText(),pasword_login.getText());
-            Platform.runLater(()->{
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("dati inseriti");
-                alert.setHeaderText("Successo!");
-                alert.setContentText("i tuoi dati sono stati registati con successo: \n nome: " + nome_login.getText() + "\n pasword:  " + pasword_login.getText());
-                alert.showAndWait();
-                System.out.println("Registrazione: " + nome_login.getText() + "\n" + pasword_login.getText());
-            });
+                if(pasword_login.getText().isEmpty()){
+                    Platform.runLater(()->{
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("dati non inseriti");
+                        alert.setHeaderText("errore");
+                        alert.setContentText("devi inserire la password");
+                        alert.showAndWait();
+                    });
+
+                }else if (nome_login.getText().isEmpty()){
+                    Platform.runLater(()->{
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("dati non inseriti");
+                        alert.setHeaderText("errore");
+                        alert.setContentText("devi inserire l'username");
+                        alert.showAndWait();
+                    });
+                }
+
+                else {
+                    db_login.aggiungiUtente(nome_login.getText(), pasword_login.getText());
+                    Platform.runLater(() -> {
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("dati inseriti");
+                        alert.setHeaderText("Successo!");
+                        alert.setContentText("i tuoi dati sono stati registati con successo: \n nome: " + nome_login.getText() + "\n pasword:  " + pasword_login.getText());
+                        alert.showAndWait();
+                        System.out.println("Registrazione: " + nome_login.getText() + "\n" + pasword_login.getText());
+                    });
+                }
+
 
         }else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
