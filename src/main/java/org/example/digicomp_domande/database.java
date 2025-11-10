@@ -1,16 +1,16 @@
 package org.example.digicomp_domande;
 
 import java.sql.*;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class database {
 
     // 🔹 Costanti di connessione
-    private final static String URL = "jdbc:mysql://45.133.119.210:3306/digcomp";
-    private final static String USER = "digcomp";
-    private final static String PASSWORD = "digcomp";
+    private final static String URL = "jdbc:mysql://database-1.cx0gqu8gcqef.eu-central-1.rds.amazonaws.com:3306/login"
+            + "?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+    private final static String USER = "admin";
+    private final static String PASSWORD = "Alessio12$";
     private final static String DRIVER = "com.mysql.cj.jdbc.Driver";
 
     // 🔹 Query SQL
@@ -87,8 +87,7 @@ public class database {
                     1,
                     5
             );
-            //mostraDati();
-            //System.out.println(rispostaCorr(1,5,1,1));
+
             chiudiTabella();
 
         } catch (SQLException | ClassNotFoundException ex) {
@@ -100,7 +99,6 @@ public class database {
     private static void creaTabella() throws SQLException {
         stmt.executeUpdate(DROP_TABLE);
         stmt.executeUpdate(CREATE_TABLE);
-        System.out.println("Tabella creata!");
     }
 
     // Metodo per inserire un record
@@ -188,7 +186,6 @@ public static void connect() throws SQLException, ClassNotFoundException {
     if (conn == null || conn.isClosed()) {
         Class.forName(DRIVER);
         conn = DriverManager.getConnection(URL, USER, PASSWORD);
-        System.out.println("✅ Connessione al DB aperta!");
         stmt = conn.createStatement();
         pstmt = conn.prepareStatement(INSERT);
         creaTabella();
@@ -233,8 +230,6 @@ public static void connect() throws SQLException, ClassNotFoundException {
                 1,
                 1
         );
-
-        mostraDati();
     }
 }
     public static int idDomandaCasuale(int area,int livello)throws SQLException, ClassNotFoundException {

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="306.0" prefWidth="372.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.digicomp_domande.Schermata_login">
+   <children>
+      <Label alignment="CENTER" layoutX="141.0" layoutY="38.0" prefHeight="39.0" prefWidth="90.0" text="Benvenuto">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nome_login" layoutX="106.0" layoutY="104.0" promptText="Username" />
+      <PasswordField fx:id="pasword_login" layoutX="106.0" layoutY="162.0" promptText="Password" />
+      <Button fx:id="login" layoutX="70.0" layoutY="229.0" mnemonicParsing="false" onMouseClicked="#Login" prefHeight="26.0" prefWidth="90.0" text="Login" />
+      <Button fx:id="register" layoutX="204.0" layoutY="229.0" mnemonicParsing="false" onMouseClicked="#Register" prefHeight="26.0" prefWidth="90.0" text="Registrati" />
+   </children>
+</AnchorPane>
