@@ -43,7 +43,7 @@ import java.sql.ResultSet;
                 if (conn == null || conn.isClosed()) {
                     Class.forName(DRIVER);
                     conn = DriverManager.getConnection(URL, USER, PASSWORD);
-                    System.out.println("✅ Connessione al DB aperta!");
+                    System.out.println("Connessione al DB aperta!");
                     stmt = conn.createStatement();
                     pstmt = conn.prepareStatement(INSERT);
                     creaTabella();
@@ -62,7 +62,7 @@ import java.sql.ResultSet;
                 if (pstmt != null) pstmt.close();
                 if (stmt != null) stmt.close();
                 if (conn != null) conn.close();
-                System.out.println("🔒 Connessione chiusa.");
+                System.out.println("Connessione chiusa.");
             } catch (SQLException e) {
                 e.printStackTrace();
             }

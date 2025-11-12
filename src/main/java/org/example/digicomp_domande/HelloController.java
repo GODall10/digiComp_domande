@@ -14,21 +14,14 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class HelloController {
-    int gen1;
-    int gen2;
-    int gen3;
-    int gen4;
-    int indexwin;
+    int area;
+    int currid;
+    int cont;
+    int idgen;
     String selezione;
     String corretta;
     database db = new database();
-    @FXML
-    private Label welcomeText;
 
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
     @FXML
     private TextField txtDomanda;
     @FXML
@@ -40,71 +33,70 @@ public class HelloController {
     @FXML
     private RadioButton radioButtond;
     private ToggleGroup toggleGroup;
+    private Toggle toggle;
     @FXML
     public void initialize() throws SQLException, ClassNotFoundException {
         db.connect();
-        txtDomanda.setText("Domanda!");
         toggleGroup = new ToggleGroup();
         radioButtona.setToggleGroup(toggleGroup);
         radioButtonb.setToggleGroup(toggleGroup);
         radioButtonc.setToggleGroup(toggleGroup);
         radioButtond.setToggleGroup(toggleGroup);
-        String answer = db.rispostaCorr(1,1,1,1);
+        idgen =db.idDomandaCasuale(1,1);
+        txtDomanda.setText(db.getDomanda(idgen));
+        String answer = db.rispostaCorr(idgen);
         ArrayList<String> answers = new ArrayList<>();
         String rispostesb[];
-        rispostesb= db.risposteSbagliate(1);
+        rispostesb= db.risposteSbagliate(idgen);
         answers.add(answer);
         answers.add(rispostesb[0]);
         answers.add(rispostesb[1]);
         answers.add(rispostesb[2]);
         Collections.shuffle(answers);
-        corretta = db.rispostaCorr(1,1,1,1);
-        System.out.println(answers);
+        corretta = db.rispostaCorr(idgen);
         radioButtona.setText(answers.get(0));
         radioButtonb.setText(answers.get(1));
         radioButtonc.setText(answers.get(2));
         radioButtond.setText(answers.get(3));
-        txtDomanda.setText(db.getDomanda(1));
-        int idgen =db.idDomandaCasuale(1,1);
-        System.out.println(db.getDomanda(idgen));
-        db.chiudiTabella();
+
     }
         @FXML
         public void indovina() {
-            System.out.println(toggleGroup.getSelectedToggle());
-            if(radioButtona.isSelected()){
-                selezione = radioButtona.getText();
-                if(!selezione.equals(corretta)){
-                    System.out.println("risposta sbagliata");
-                }else if(selezione.equals(corretta)){
-                    System.out.println("risposta corretta");
+            if(toggleGroup.getSelectedToggle()!=null) {
+                cont++;
+                switch (cont) {
+                    case 1:
+                        System.out.println("ciao");
+                        break;
+                    case 2:
+                        System.out.println("vediamo");
+                        break;
                 }
-            }else if(radioButtonb.isSelected()){
-                selezione = radioButtonb.getText();
-                if(!selezione.equals(corretta)){
-                    System.out.println("risposta sbagliata");
-                }else if(selezione.equals(corretta)){
-                    System.out.println("risposta corretta");
-                }
-            }else if (radioButtonc.isSelected()){
-                selezione = radioButtonc.getText();
-                if(!selezione.equals(corretta)){
-                    System.out.println("risposta sbagliata");
-                }else if(selezione.equals(corretta)){
-                    System.out.println("risposta corretta");
-                }
-            }else if (radioButtond.isSelected()){
-                selezione = radioButtond.getText();
-                if(!selezione.equals(corretta)){
-                    System.out.println("risposta sbagliata");
-                }else if(selezione.equals(corretta)){
-                    System.out.println("risposta corretta");
-                }
+                toggle = toggleGroup.getSelectedToggle();
+               RadioButton radioButton = (RadioButton) toggle;
+               selezione = radioButton.getText();
+               if (selezione.equals(corretta)) {
+                   System.out.println("corretta");
+               }else {
+                   System.out.println("sbagliata");
+               }
+
+
+            }else{
+                System.out.println("qualcosa");
             }
         }
         @FXML
         public Button btnIndovina;
+        @FXML
+        public void mostraMsg() {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("benvenuto");
+            alert.setHeaderText("Benvenuto nel testing AICA digComp2.2");
+            alert.setContentText("inizierai dalla prima area: Alfabetizzazione su informazioni e dati \n tempo limite: 90 minuti");
+            alert.showAndWait();
         }
+}
 
 
 

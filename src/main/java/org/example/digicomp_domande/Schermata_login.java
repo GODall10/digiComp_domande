@@ -16,7 +16,9 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class Schermata_login {
+    String username;
     db_login db_login= new db_login();
+    HelloController controller = new HelloController();
     @FXML
     private TextField nome_login;
     @FXML
@@ -75,11 +77,17 @@ public class Schermata_login {
     };
     @FXML
     private void Login() throws IOException, SQLException {
-        System.out.println("Login: "+nome_login.getText()+"\n"+pasword_login.getText());
-        int result= db_login.controllaUtente(nome_login.getText(),pasword_login.getText());
-        if(result==0){
+        if (pasword_login.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("nessuna password");
+            alert.setHeaderText("Error!");
+            alert.setContentText("prova prima ad inserire una password");
+            alert.showAndWait();
+        }else{
+        int result = db_login.controllaUtente(nome_login.getText(), pasword_login.getText());
+        if (result == 0) {
             int psw = db_login.controllaPassword(nome_login.getText());
-            if(psw==0){
+            if (psw == 0) {
                 System.out.println("utente non trovato eseguire il login");
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Errore");
@@ -88,7 +96,7 @@ public class Schermata_login {
                 alert.showAndWait();
                 nome_login.clear();
                 pasword_login.clear();
-            }else {
+            } else {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Errore");
                 alert.setHeaderText("Errore");
@@ -97,7 +105,7 @@ public class Schermata_login {
                 pasword_login.clear();
             }
 
-        }else {
+        } else {
             System.out.println("tutto apposto");
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Successo");
@@ -106,6 +114,7 @@ public class Schermata_login {
             alert.showAndWait();
             apriSecondoStage();
         }
+    }
     }
     @FXML
     private void apriSecondoStage() {
@@ -118,6 +127,7 @@ public class Schermata_login {
             stage.setTitle("Seconda Finestra");
             stage.setScene(new Scene(root));
             stage.show();
+            controller.mostraMsg();
 
             // Chiudi lo stage corrente
             Stage currentStage = (Stage) login.getScene().getWindow();

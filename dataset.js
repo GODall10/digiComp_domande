@@ -289,76 +289,76 @@ const questions = {
         livelloDifficolta: 4
     },
 
-// 🧩 LIVELLO 5
+// 🧩 LIVELLO 5 si ma adesso è diventato 4
     41: {
         domanda: "Come si può verificare l’autenticità di un documento digitale?",
         rispostaCorretta: "Controllando la firma digitale o il certificato del documento",
         risposteErrate: ["Guardando il nome del file", "Stampandolo", "Condividendolo online"],
         area: 1,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     42: {
         domanda: "Che cosa si intende per ‘intelligenza artificiale nei motori di ricerca’?",
         rispostaCorretta: "L’uso di algoritmi che comprendono il contesto e migliorano i risultati",
         risposteErrate: ["L’uso di pubblicità automatica", "Un virus", "Un servizio di archiviazione"],
         area: 1,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     43: {
         domanda: "Come si può valutare la qualità dei dati raccolti?",
         rispostaCorretta: "Analizzando accuratezza, completezza e aggiornamento",
         risposteErrate: ["Guardando la lunghezza del file", "Basandosi su opinioni", "Controllando la dimensione in MB"],
         area: 1,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     44: {
         domanda: "Cosa indica il termine ‘data mining’?",
         rispostaCorretta: "L’analisi automatica di grandi quantità di dati per estrarre informazioni utili",
         risposteErrate: ["La cancellazione dei dati", "La crittografia dei file", "L’archiviazione su cloud"],
         area: 1,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     45: {
         domanda: "Che cos’è un ‘dataset’?",
         rispostaCorretta: "Un insieme strutturato di dati utilizzato per analisi o addestramento AI",
         risposteErrate: ["Un programma di scrittura", "Un database vuoto", "Un grafico"],
         area: 1,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     46: {
         domanda: "Come si può rilevare una manipolazione di immagini digitali?",
         rispostaCorretta: "Analizzando metadati o usando software di verifica delle immagini",
         risposteErrate: ["Riducendo la risoluzione", "Aumentando il contrasto", "Stampandola in bianco e nero"],
         area: 1,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     47: {
         domanda: "Che cos’è la ‘data governance’?",
         rispostaCorretta: "L’insieme di regole e processi per gestire e proteggere i dati in un’organizzazione",
         risposteErrate: ["Una piattaforma social", "Un tipo di cloud", "Un algoritmo di ricerca"],
         area: 1,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     48: {
         domanda: "Cosa si intende per ‘big data’?",
         rispostaCorretta: "Grandi volumi di dati complessi che richiedono strumenti avanzati per l’analisi",
         risposteErrate: ["Un grande database Excel", "Un backup", "Un formato video"],
         area: 1,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     49: {
         domanda: "Che cos’è l’open access?",
         rispostaCorretta: "La libera disponibilità online di contenuti scientifici e accademici",
         risposteErrate: ["Un tipo di cloud storage", "Un software a pagamento", "Un social network"],
         area: 1,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     50: {
         domanda: "Come si può garantire la qualità dei dati nei progetti digitali?",
         rispostaCorretta: "Definendo procedure di validazione e controllo continuo",
         risposteErrate: ["Cancellando file vecchi", "Salvando solo i dati nuovi", "Usando qualsiasi fonte disponibile"],
         area: 1,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
 
 // 📚 AREA: Comunicazione e collaborazione
@@ -650,70 +650,70 @@ const questions = {
         rispostaCorretta: "Consentire la comunicazione e scambio di dati tra diversi strumenti digitali",
         risposteErrate: ["Creare più account", "Usare solo email", "Bloccare le notifiche"],
         area: 2,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     92: {
         domanda: "Qual è l’obiettivo di un protocollo di collaborazione sicura?",
         rispostaCorretta: "Proteggere dati e comunicazioni tra utenti",
         risposteErrate: ["Aumentare la velocità della connessione", "Creare documenti automaticamente", "Inviare pubblicità"],
         area: 2,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     93: {
         domanda: "Cosa si intende per ‘gestione avanzata dei permessi’?",
         rispostaCorretta: "Controllare chi può leggere, modificare o condividere contenuti",
         risposteErrate: ["Cancellare tutto automaticamente", "Inviare email senza limiti", "Creare nuovi utenti senza restrizioni"],
         area: 2,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     94: {
         domanda: "Qual è il vantaggio di usare piattaforme collaborative con versioning?",
         rispostaCorretta: "Tenere traccia delle modifiche e ripristinare versioni precedenti",
         risposteErrate: ["Aumentare la dimensione del file", "Proteggere solo le immagini", "Inviare notifiche anonime"],
         area: 2,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     95: {
         domanda: "Cosa significa ‘workflow digitale’?",
         rispostaCorretta: "Serie di processi coordinati online per completare un progetto",
         risposteErrate: ["Inviare email multiple", "Stampare documenti", "Archiviare file offline"],
         area: 2,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     96: {
         domanda: "Qual è un principio chiave della comunicazione digitale efficace?",
         rispostaCorretta: "Chiarezza, concisione e adattamento al pubblico",
         risposteErrate: ["Usare solo emoji", "Scrivere testi lunghi", "Inviare sempre allegati grandi"],
         area: 2,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     97: {
         domanda: "Cosa significa ‘collaborazione interoperabile’?",
         rispostaCorretta: "Collaborare usando sistemi e software differenti che comunicano tra loro",
         risposteErrate: ["Usare lo stesso software per tutti", "Inviare file solo offline", "Creare copie cartacee dei documenti"],
         area: 2,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     98: {
         domanda: "Qual è lo scopo dei log di attività in piattaforme collaborative?",
         rispostaCorretta: "Tracciare modifiche, accessi e operazioni effettuate dagli utenti",
         risposteErrate: ["Creare backup automatici", "Inviare notifiche inutili", "Proteggere solo le immagini"],
         area: 2,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     99: {
         domanda: "Cosa significa ‘gestione dei progetti digitali’ avanzata?",
         rispostaCorretta: "Organizzare risorse, tempi e collaboratori usando strumenti digitali",
         risposteErrate: ["Creare email automatiche", "Stampare documenti senza limiti", "Inviare notifiche spam"],
         area: 2,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     100: {
         domanda: "Qual è l’importanza del backup dei dati in ambienti collaborativi?",
         rispostaCorretta: "Garantire la disponibilità e sicurezza delle informazioni condivise",
         risposteErrate: ["Aumentare la velocità del browser", "Bloccare utenti indesiderati", "Creare nuovi account automaticamente"],
         area: 2,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     101: {
         domanda: "Qual è lo scopo principale di un editor di testo?",
@@ -1000,70 +1000,70 @@ const questions = {
         rispostaCorretta: "Creare animazioni complesse integrate con elementi grafici e testo",
         risposteErrate: ["Modificare solo immagini statiche", "Scrivere documenti testuali", "Creare fogli di calcolo"],
         area: 3,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     142: {
         domanda: "Qual è lo scopo di un software di modellazione 3D?",
         rispostaCorretta: "Creare oggetti tridimensionali per animazioni o stampa 3D",
         risposteErrate: ["Creare presentazioni semplici", "Scrivere testi", "Gestire email"],
         area: 3,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     143: {
         domanda: "Cosa significa 'tracking 3D' in post-produzione video?",
         rispostaCorretta: "Seguire il movimento della videocamera e integrare oggetti 3D",
         risposteErrate: ["Aumentare luminosità", "Ridurre dimensioni file", "Modificare solo audio"],
         area: 3,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     144: {
         domanda: "Cosa permette di fare il rendering in 3D?",
         rispostaCorretta: "Generare immagini o video finali realistici da modelli 3D",
         risposteErrate: ["Modificare testo", "Stampare un documento", "Aggiungere animazioni 2D"],
         area: 3,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     145: {
         domanda: "Cosa significa 'color grading avanzato'?",
         rispostaCorretta: "Regolare colori e toni del video per effetti professionali",
         risposteErrate: ["Aumentare la risoluzione automaticamente", "Ridurre la dimensione del file", "Modificare solo il testo"],
         area: 3,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     146: {
         domanda: "Qual è lo scopo dei layer 3D in software avanzati?",
         rispostaCorretta: "Gestire oggetti tridimensionali separati con profondità e illuminazione",
         risposteErrate: ["Creare solo testi", "Stampare PDF", "Ridurre dimensione file"],
         area: 3,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     147: {
         domanda: "Cosa significa 'motion capture'?",
         rispostaCorretta: "Registrare i movimenti reali per animazioni digitali",
         risposteErrate: ["Modificare colori in immagini", "Creare grafica vettoriale", "Aumentare la risoluzione dei video"],
         area: 3,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     148: {
         domanda: "Cosa significa 'compositing avanzato'?",
         rispostaCorretta: "Integrare elementi multipli con effetti realistici in video o immagini",
         risposteErrate: ["Stampare immagini", "Aggiungere solo testo", "Ridurre peso file"],
         area: 3,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     149: {
         domanda: "Cosa permette di fare la simulazione di luci in 3D?",
         rispostaCorretta: "Visualizzare l’effetto delle luci sugli oggetti digitali realistici",
         risposteErrate: ["Stampare il documento", "Modificare solo testo", "Aggiungere transizioni base"],
         area: 3,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     150: {
         domanda: "Qual è il vantaggio di usare formati video ad alta qualità (es. ProRes, DNxHD)?",
         rispostaCorretta: "Conservare dettagli e colori per post-produzione professionale",
         risposteErrate: ["Ridurre automaticamente la dimensione file", "Creare automaticamente sottotitoli", "Convertire in PDF"],
         area: 3,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     151: {
         domanda: "Cosa significa avere una password sicura?",
@@ -1350,420 +1350,420 @@ const questions = {
         rispostaCorretta: "Attacco sofisticato e prolungato mirato a un obiettivo specifico",
         risposteErrate: ["Un aggiornamento di sicurezza", "Un firewall avanzato", "Un antivirus gratuito"],
         area: 4,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     192: {
         domanda: "Cosa indica Zero Trust Security?",
         rispostaCorretta: "Non fidarsi automaticamente di nessun utente o dispositivo, nemmeno interni",
         risposteErrate: ["Usare solo password lunghe", "Aggiornare firewall mensilmente", "Backup automatico cloud"],
         area: 4,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     193: {
         domanda: "Cosa significa sicurezza dei dati in transito?",
         rispostaCorretta: "Protezione dei dati mentre viaggiano tra sistemi o reti",
         risposteErrate: ["Protezione dei dati solo sul disco", "Backup automatico giornaliero", "Eliminazione dei file temporanei"],
         area: 4,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     194: {
         domanda: "Cosa indica sicurezza dei dati a riposo?",
         rispostaCorretta: "Protezione dei dati archiviati su disco o server",
         risposteErrate: ["Protezione solo della rete", "Aggiornamento antivirus automatico", "Cancellazione automatica dei dati"],
         area: 4,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     195: {
         domanda: "Cosa significa gestione delle patch?",
         rispostaCorretta: "Installare aggiornamenti software per correggere vulnerabilità",
         risposteErrate: ["Cancellare file obsoleti", "Creare backup manuali", "Configurare firewall base"],
         area: 4,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     196: {
         domanda: "Cosa è un attacco man-in-the-middle?",
         rispostaCorretta: "Intercettare comunicazioni tra due utenti per rubare informazioni",
         risposteErrate: ["Un antivirus avanzato", "Una rete sicura", "Un backup automatico cloud"],
         area: 4,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     197: {
         domanda: "Cosa significa sicurezza proattiva?",
         rispostaCorretta: "Adottare misure preventive per impedire minacce prima che accadano",
         risposteErrate: ["Reagire solo agli attacchi", "Fare backup una volta l’anno", "Disattivare firewall"],
         area: 4,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     198: {
         domanda: "Cosa significa autenticazione basata su rischio?",
         rispostaCorretta: "Aumentare i controlli di sicurezza in base al rischio percepito dell’accesso",
         risposteErrate: ["Usare password lunghe sempre", "Aggiornare firewall ogni mese", "Backup automatico giornaliero"],
         area: 4,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     199: {
         domanda: "Cosa indica sicurezza end-to-end in applicazioni critiche?",
         rispostaCorretta: "Protezione completa dei dati dalla sorgente alla destinazione senza possibilità di lettura intermedia",
         risposteErrate: ["Backup locale dei dati", "Crittografia solo dei file di testo", "Aggiornamento antivirus automatico"],
         area: 4,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     200: {
         domanda: "Cosa significa threat modeling?",
         rispostaCorretta: "Identificare e analizzare possibili minacce prima che si verifichino",
         risposteErrate: ["Aggiornare software in ritardo", "Disattivare firewall", "Backup manuale sporadico"],
         area: 4,
-        livelloDifficolta: 5
+        livelloDifficolta: 4
     },
     201: {
         domanda: "Cosa fare se il computer non si accende?",
         rispostaCorretta: "Verificare l’alimentazione e i cavi collegati",
         risposteErrate: ["Reinstallare il sistema operativo subito", "Cercare virus online", "Cambiare il mouse"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 1
     },
     202: {
         domanda: "Cosa fare se un programma si blocca?",
         rispostaCorretta: "Chiuderlo e riaprirlo",
         risposteErrate: ["Spegnere il computer senza salvare", "Cancellare tutti i file", "Installare un antivirus"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 1
     },
     203: {
         domanda: "Cosa fare se il Wi-Fi non funziona?",
         rispostaCorretta: "Controllare router e connessione",
         risposteErrate: ["Comprare un nuovo computer", "Spegnere il modem e non riaccenderlo", "Cancellare la cronologia del browser"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 1
     },
     204: {
         domanda: "Cosa fare se lo schermo è nero ma il computer è acceso?",
         rispostaCorretta: "Verificare i cavi e la luminosità",
         risposteErrate: ["Buttare il computer", "Accendere un altro monitor senza spegnere", "Formattare subito il sistema"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 1
     },
     205: {
         domanda: "Cosa fare se il mouse non risponde?",
         rispostaCorretta: "Controllare la batteria o il collegamento",
         risposteErrate: ["Comprare un nuovo mouse senza controllare", "Cambiare il sistema operativo", "Spegnere il computer senza motivo"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 1
     },
     206: {
         domanda: "Cosa fare se la stampante non stampa?",
         rispostaCorretta: "Controllare toner, carta e connessione",
         risposteErrate: ["Disinstallare il computer", "Cambiare browser", "Spegnere il modem"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 1
     },
     207: {
         domanda: "Cosa fare se una finestra di programma non si chiude?",
         rispostaCorretta: "Usare Gestione attività per terminarla",
         risposteErrate: ["Spegnere il computer senza salvare", "Cancellare tutti i file", "Riavviare internet"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 1
     },
     208: {
         domanda: "Cosa fare se un file non si apre?",
         rispostaCorretta: "Verificare che il programma giusto sia installato",
         risposteErrate: ["Cancellare tutti i file simili", "Cambiare sistema operativo", "Spegnere il computer"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 1
     },
     209: {
         domanda: "Cosa fare se l’audio non funziona?",
         rispostaCorretta: "Controllare volume, driver e collegamenti",
         risposteErrate: ["Comprare nuove casse senza controllare", "Cambiare browser", "Formattare il computer"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 1
     },
     210: {
         domanda: "Cosa fare se il computer è lento?",
         rispostaCorretta: "Chiudere programmi inutili e verificare lo spazio disco",
         risposteErrate: ["Riavviare senza fare nulla", "Cancellare il sistema operativo", "Installare mille programmi nuovi"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 1
     },
     211: {
         domanda: "Cosa fare se il browser non carica pagine?",
         rispostaCorretta: "Verificare la connessione e cancellare cache e cookie",
         risposteErrate: ["Spegnere il computer", "Cambiare monitor", "Disinstallare il sistema operativo"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 2
     },
     212: {
         domanda: "Cosa fare se un’applicazione si aggiorna male?",
         rispostaCorretta: "Disinstallarla e reinstallare la versione corretta",
         risposteErrate: ["Spegnere il computer", "Ignorare il problema", "Cancellare documenti personali"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 2
     },
     213: {
         domanda: "Cosa fare se il disco è quasi pieno?",
         rispostaCorretta: "Eliminare file inutili e fare pulizia del disco",
         risposteErrate: ["Comprare un nuovo computer", "Formattare senza backup", "Installare antivirus"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 2
     },
     214: {
         domanda: "Cosa fare se la rete locale non funziona?",
         rispostaCorretta: "Controllare router, cavi e impostazioni IP",
         risposteErrate: ["Cambiare tutti i dispositivi", "Spegnere il computer senza controllare", "Disinstallare internet"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 2
     },
     215: {
         domanda: "Cosa fare se un programma da errore di compatibilità?",
         rispostaCorretta: "Verificare requisiti e aggiornamenti del software",
         risposteErrate: ["Cancellare il computer", "Cambiare monitor", "Spegnere la stampante"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 2
     },
     216: {
         domanda: "Cosa fare se i driver non funzionano correttamente?",
         rispostaCorretta: "Aggiornare o reinstallare i driver appropriati",
         risposteErrate: ["Ignorare il problema", "Disinstallare il computer", "Cambiare sistema operativo ogni giorno"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 2
     },
     217: {
         domanda: "Cosa fare se il computer si surriscalda?",
         rispostaCorretta: "Verificare ventilazione, polvere e temperatura ambiente",
         risposteErrate: ["Spegnere il computer e lasciarlo chiuso", "Accendere più programmi pesanti", "Ignorare il problema"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 2
     },
     218: {
         domanda: "Cosa fare se un dispositivo USB non viene riconosciuto?",
         rispostaCorretta: "Provare un’altra porta o aggiornare driver",
         risposteErrate: ["Buttarlo via subito", "Spegnere il computer senza verificare", "Formattare il disco rigido"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 2
     },
     219: {
         domanda: "Cosa fare se un software va in crash ripetutamente?",
         rispostaCorretta: "Verificare aggiornamenti e reinstallare se necessario",
         risposteErrate: ["Cancellare tutti i file del computer", "Cambiare monitor", "Disattivare internet"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 2
     },
     220: {
         domanda: "Cosa fare se ci sono conflitti tra programmi?",
         rispostaCorretta: "Chiudere i programmi in conflitto e aggiornare il software",
         risposteErrate: ["Ignorare il conflitto", "Cancellare il sistema operativo", "Spegnere il monitor"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 2
     },
     221: {
         domanda: "Cosa fare se un software mostra errori sconosciuti?",
         rispostaCorretta: "Consultare il log degli errori e la documentazione ufficiale",
         risposteErrate: ["Disinstallare tutto il computer", "Ignorare l’errore", "Spegnere il monitor"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 3
     },
     222: {
         domanda: "Come risolvere conflitti tra versioni diverse di uno stesso programma?",
         rispostaCorretta: "Disinstallare le versioni obsolete e mantenere solo quella aggiornata",
         risposteErrate: ["Copiare tutti i file in una cartella", "Spegnere il computer", "Ignorare il problema"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 3
     },
     223: {
         domanda: "Come affrontare problemi di lentezza causati da troppi processi in background?",
         rispostaCorretta: "Chiudere i processi non necessari e ottimizzare l’avvio automatico",
         risposteErrate: ["Spegnere il computer continuamente", "Formattare il disco senza backup", "Disinstallare antivirus"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 3
     },
     224: {
         domanda: "Cosa fare se un aggiornamento di sistema fallisce ripetutamente?",
         rispostaCorretta: "Verificare spazio disponibile, connessione e log degli errori",
         risposteErrate: ["Ignorare l’aggiornamento", "Cancellare tutti i file", "Spegnere il computer e basta"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 3
     },
     225: {
         domanda: "Come risolvere problemi di rete intermittente?",
         rispostaCorretta: "Controllare cavi, router, driver e configurazioni IP",
         risposteErrate: ["Ignorare il problema", "Spegnere il computer", "Disinstallare internet"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 3
     },
     226: {
         domanda: "Cosa fare se un programma non è compatibile con il sistema operativo?",
         rispostaCorretta: "Usare versioni compatibili o ambienti virtuali",
         risposteErrate: ["Forzare l’installazione", "Cambiare monitor", "Spegnere il computer"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 3
     },
     227: {
         domanda: "Come diagnosticare problemi hardware intermittenti?",
         rispostaCorretta: "Usare strumenti di diagnostica e testare componenti singolarmente",
         risposteErrate: ["Cambiare tutto l’hardware a caso", "Spegnere il computer", "Ignorare il problema"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 3
     },
     228: {
         domanda: "Cosa fare se i dati si corrompono frequentemente?",
         rispostaCorretta: "Verificare backup, integrità disco e eventuali virus",
         risposteErrate: ["Formattare senza backup", "Ignorare il problema", "Spegnere il computer senza salvare"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 3
     },
     229: {
         domanda: "Come risolvere problemi di autorizzazioni su file o cartelle?",
         rispostaCorretta: "Controllare utenti, permessi e proprietà dei file",
         risposteErrate: ["Eliminare tutti i file", "Cambiare il sistema operativo", "Spegnere il computer"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 3
     },
     230: {
         domanda: "Cosa fare se una periferica esterna non funziona correttamente?",
         rispostaCorretta: "Verificare driver, connessioni e compatibilità",
         risposteErrate: ["Buttarla via subito", "Spegnere il computer", "Formattare tutto il sistema"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 3
     },
     231: {
         domanda: "Come risolvere problemi complessi di rete aziendale?",
         rispostaCorretta: "Analizzare topologia, log dei dispositivi e configurazioni avanzate",
         risposteErrate: ["Spegnere tutti i computer", "Cambiare solo i cavi", "Ignorare il problema"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 4
     },
     232: {
         domanda: "Cosa fare se un software critico fallisce dopo aggiornamento?",
         rispostaCorretta: "Ripristinare backup, controllare log e contattare supporto tecnico",
         risposteErrate: ["Disinstallare tutto il computer", "Ignorare il problema", "Spegnere il computer ripetutamente"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 4
     },
     233: {
         domanda: "Come risolvere problemi di sincronizzazione dati tra dispositivi?",
         rispostaCorretta: "Verificare connessione, account e integrità dei dati",
         risposteErrate: ["Cancellare tutti i dati", "Cambiare dispositivo senza verificare", "Spegnere il computer"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 4
     },
     234: {
         domanda: "Cosa fare se si sospetta malware persistente?",
         rispostaCorretta: "Usare strumenti avanzati di scansione e rimuovere minacce",
         risposteErrate: ["Ignorare il malware", "Disinstallare antivirus", "Spegnere il computer senza fare nulla"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 4
     },
     235: {
         domanda: "Come diagnosticare problemi di prestazioni server?",
         rispostaCorretta: "Monitorare risorse, log, e carico dei processi",
         risposteErrate: ["Spegnere il server continuamente", "Cancellare tutti i file", "Cambiare server senza analisi"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 4
     },
     236: {
         domanda: "Cosa fare se più programmi causano conflitti di risorse?",
         rispostaCorretta: "Analizzare le risorse utilizzate e ottimizzare la configurazione",
         risposteErrate: ["Ignorare i conflitti", "Formattare il computer", "Spegnere il monitor"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 4
     },
     237: {
         domanda: "Come risolvere problemi di backup fallito ripetutamente?",
         rispostaCorretta: "Verificare spazio, permessi e integrità del dispositivo di backup",
         risposteErrate: ["Ignorare il problema", "Cancellare tutto il disco", "Spegnere il computer senza fare nulla"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 4
     },
     238: {
         domanda: "Cosa fare se un database non risponde?",
         rispostaCorretta: "Controllare connessione, log e integrità dei dati",
         risposteErrate: ["Spegnere il server", "Cancellare tutti i record", "Ignorare il problema"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 4
     },
     239: {
         domanda: "Come risolvere problemi di compatibilità tra software aziendali?",
         rispostaCorretta: "Verificare versioni, aggiornamenti e dipendenze",
         risposteErrate: ["Disinstallare tutto", "Ignorare problemi di compatibilità", "Spegnere computer"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 4
     },
     240: {
         domanda: "Cosa fare se un’applicazione crittica mostra errori intermittenti?",
         rispostaCorretta: "Analizzare log, ambiente e riprodurre il problema per debug",
         risposteErrate: ["Ignorare gli errori", "Formattare il computer", "Spegnere il monitor"],
-        area: 5,
+        area: 4,
         livelloDifficolta: 4
     },
     241: {
         domanda: "Come risolvere problemi critici di rete aziendale complessa?",
         rispostaCorretta: "Analizzare topologia, log dei dispositivi e configurazioni avanzate",
         risposteErrate: ["Spegnere tutti i computer", "Cambiare solo i cavi", "Ignorare il problema"],
-        area: 5,
-        livelloDifficolta: 5
+        area: 4,
+        livelloDifficolta: 4
     },
     242: {
         domanda: "Cosa fare se un sistema server va in crash durante operazioni critiche?",
         rispostaCorretta: "Ripristinare backup, analizzare log e notificare team tecnico",
         risposteErrate: ["Ignorare il crash", "Spegnere tutto senza backup", "Formattare immediatamente"],
-        area: 5,
-        livelloDifficolta: 5
+        area: 4,
+        livelloDifficolta: 4
     },
     243: {
         domanda: "Come diagnosticare problemi di sicurezza avanzata legati a malware persistente?",
         rispostaCorretta: "Usare strumenti avanzati, analizzare comportamenti e rimuovere minacce",
         risposteErrate: ["Disinstallare antivirus", "Ignorare il malware", "Spegnere computer senza analisi"],
-        area: 5,
-        livelloDifficolta: 5
+        area: 4,
+        livelloDifficolta: 4
     },
     244: {
         domanda: "Come risolvere problemi di performance critica su server con carichi elevati?",
         rispostaCorretta: "Monitorare risorse, bilanciare carico e ottimizzare configurazioni",
         risposteErrate: ["Spegnere il server ripetutamente", "Formattare senza backup", "Ignorare i problemi di performance"],
-        area: 5,
-        livelloDifficolta: 5
+        area: 4,
+        livelloDifficolta: 4
     },
     245: {
         domanda: "Cosa fare se più applicazioni enterprise causano conflitti gravi?",
         rispostaCorretta: "Analizzare le risorse condivise e ottimizzare la configurazione",
         risposteErrate: ["Disinstallare tutto", "Ignorare i conflitti", "Spegnere monitor"],
-        area: 5,
-        livelloDifficolta: 5
+        area: 4,
+        livelloDifficolta: 4
     },
     246: {
         domanda: "Come risolvere problemi critici di backup e disaster recovery?",
         rispostaCorretta: "Verificare integrità, permessi e testare procedure di ripristino",
         risposteErrate: ["Ignorare il backup fallito", "Cancellare tutti i dati", "Spegnere il computer senza fare nulla"],
-        area: 5,
-        livelloDifficolta: 5
+        area: 4,
+        livelloDifficolta: 4
     },
     247: {
         domanda: "Cosa fare se un database mission-critical diventa inaccessibile?",
         rispostaCorretta: "Analizzare log, connessione, integrità dati e attivare piani di ripristino",
         risposteErrate: ["Spegnere il server", "Cancellare tutti i record", "Ignorare il problema"],
-        area: 5,
-        livelloDifficolta: 5
+        area: 4,
+        livelloDifficolta: 4
     },
     248: {
         domanda: "Come risolvere problemi di compatibilità critica tra software aziendali?",
         rispostaCorretta: "Verificare versioni, aggiornamenti, dipendenze e test in ambienti controllati",
         risposteErrate: ["Disinstallare tutto", "Ignorare problemi", "Spegnere computer"],
-        area: 5,
-        livelloDifficolta: 5
+        area: 4,
+        livelloDifficolta: 4
     },
     249: {
         domanda: "Cosa fare se applicazioni critiche mostrano errori intermittenti su sistemi produttivi?",
         rispostaCorretta: "Analizzare log, ambiente, replicare il problema e fare debug approfondito",
         risposteErrate: ["Ignorare gli errori", "Formattare il computer", "Spegnere il monitor"],
-        area: 5,
-        livelloDifficolta: 5
+        area: 4,
+        livelloDifficolta: 4
     },
     250: {
         domanda: "Come gestire problemi complessi di sicurezza e performance simultanei?",
         rispostaCorretta: "Pianificare analisi dettagliata, isolare componenti e intervenire in ordine prioritario",
         risposteErrate: ["Ignorare i problemi", "Spegnere tutto", "Disinstallare a caso software critico"],
-        area: 5,
-        livelloDifficolta: 5
+        area: 4,
+        livelloDifficolta: 4
     }
 };
 module.exports = questions;

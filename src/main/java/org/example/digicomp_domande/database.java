@@ -85,7 +85,7 @@ public class database {
                     "Controllando la firma digitale o il certificato del documento",
                     "Guardando il nome del file, Stampandolo, Condividendolo online",
                     1,
-                    5
+                    4
             );
 
             chiudiTabella();
@@ -141,17 +141,14 @@ public class database {
             if (pstmt != null) pstmt.close();
             if (stmt != null) stmt.close();
             if (conn != null) conn.close();
-            System.out.println("🔒 Connessione chiusa.");
+            System.out.println("Connessione chiusa.");
         } catch (SQLException e) { e.printStackTrace();
         }
     }
-    public static String rispostaCorr(int idInizio,int idFine, int area, int livello) throws SQLException {
-        String SELECT = "SELECT risposta_corr FROM tabella WHERE id BETWEEN ? AND ? AND area=? AND livello=? ";
+    public static String rispostaCorr(int id) throws SQLException {
+        String SELECT = "SELECT risposta_corr FROM tabella WHERE id = ? ";
         try (PreparedStatement pstmt = conn.prepareStatement(SELECT)) {
-            pstmt.setInt(1, idInizio);
-            pstmt.setInt(2, idFine);
-            pstmt.setInt(3, area);
-            pstmt.setInt(4, livello);
+            pstmt.setInt(1, id);
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
                     return rs.getString("risposta_corr"); // Leggi la colonna
@@ -221,7 +218,7 @@ public static void connect() throws SQLException, ClassNotFoundException {
                 "Controllando la firma digitale o il certificato del documento",
                 "Guardando il nome del file, Stampandolo, Condividendolo online",
                 1,
-                5
+                4
         );
         inserisciDomanda(
                 "Cosa rappresenta l’icona della lente di ingrandimento in un sito web?",
