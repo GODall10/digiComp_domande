@@ -14,7 +14,7 @@ public class schermatafinale_controller {
     String creaz;
     String sic;
     String prob;
-    int a,b,c,d,e;
+    int a, b, c, d, e;
     int somma;
     int risultato;
     String ris;
@@ -34,79 +34,88 @@ public class schermatafinale_controller {
     private TextField generale;
     @FXML
     private Button genera;
+    Utils utils = new Utils();
+
     @FXML
     public void genera() throws SQLException {
         db.connect();
+        username = utils.getUsername();
         alfabetizzazione.setText(alf);
         comunicazione.setText(com);
         creazione.setText(creaz);
         sicurezza.setText(sic);
         problemi.setText(prob);
-        calcoloMedia(a,alf);
-        calcoloMedia(b,com);
-        calcoloMedia(c,creaz);
-        calcoloMedia(d,sic);
-        calcoloMedia(e,prob);
-        somma=a+b+c+d+e;
-        risultato=Math.round(somma/5);
-        switch(risultato){
+        a = calcoloMedia(alf);
+        b = calcoloMedia(com);
+        c = calcoloMedia(creaz);
+        d = calcoloMedia(sic);
+        e = calcoloMedia(prob);
+        somma = a + b + c + d + e;
+        risultato = Math.round(somma / 5);
+        switch (risultato) {
             case 1:
-                ris="base 1";
+                ris = "base 1";
                 break;
             case 2:
-                ris="base 2";
+                ris = "base 2";
                 break;
             case 3:
-                ris ="intermedio 3";
+                ris = "intermedio 3";
                 break;
             case 4:
-                ris ="intermedio 4";
+                ris = "intermedio 4";
                 break;
             case 5:
-                ris ="avanzato 5";
+                ris = "avanzato 5";
                 break;
         }
+        System.out.println(ris);
         generale.setText(ris);
-        db.insertRisultati(username,alf,com,creaz,sic,prob,ris);
+        db.insertRisultati(username, alf, com, creaz, sic, prob, ris);
         db.chiudiTabella();
 
 
     }
-    public void setAlf(String livello){
-        alf=livello;
+
+    public void setAlf(String livello) {
+        alf = livello;
     }
-    public void setCom(String livello){
-        com=livello;
+
+    public void setCom(String livello) {
+        com = livello;
     }
-    public void setCreaz(String livello){
-        creaz=livello;
+
+    public void setCreaz(String livello) {
+        creaz = livello;
     }
-    public void setSicurezza(String livello){
-        sic=livello;
+
+    public void setSicurezza(String livello) {
+        sic = livello;
     }
-    public void setProb(String livello){
-        prob=livello;
+
+    public void setProb(String livello) {
+        prob = livello;
     }
-    public void setUsername(String user){
-        username=user;
+
+    public void setUsername(String user) {
+        username = user;
     }
-    public void calcoloMedia(int a, String area){
-        switch (area){
+
+    public int calcoloMedia(String area) {
+        switch (area) {
             case "base 1":
-                a=1;
-                break;
+                return 1;
             case "base 2":
-                a=2;
-                break;
+                return 2;
             case "intermedio 3":
-                a=3;
-                break;
+                return 3;
             case "intermedio 4":
-                a=4;
-                break;
+                return 4;
             case "avanzato 5":
-                a=5;
-                break;
+                return 5;
+            default:
+                return -1;
         }
+
     }
 }

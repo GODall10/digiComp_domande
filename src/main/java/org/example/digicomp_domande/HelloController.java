@@ -36,6 +36,7 @@ public class HelloController {
     Alert sic = new  Alert(Alert.AlertType.INFORMATION);
     Alert probl = new Alert(Alert.AlertType.INFORMATION);
     database db = new database();
+    Utils utils = new Utils();
     String a,b,c,d,e;
     String username;
 
@@ -88,11 +89,11 @@ public class HelloController {
         @FXML
         public void indovina() throws Exception {
             if(toggleGroup.getSelectedToggle()!=null) {
+                username= utils.getUsername();
                 cont++;
                 toggle = toggleGroup.getSelectedToggle();
                 RadioButton radioButton = (RadioButton) toggle;
                 selezione = radioButton.getText();
-
                 switch (cont) {
                     case 1:
                         if (selezione.equals(corretta)) {
@@ -368,8 +369,9 @@ public class HelloController {
                 case 5->problemi=livello;
             }
     }
-    public void setUsername(String user) throws Exception{
-           username=user;
+    public void setUtils(Utils utils) {
+        this.utils = utils;
+        mostraMsg();
     }
 
 

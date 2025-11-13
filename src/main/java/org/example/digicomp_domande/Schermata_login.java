@@ -21,6 +21,10 @@ public class Schermata_login {
     String username;
     db_login db_login= new db_login();
     HelloController controller = new HelloController();
+    Utils utils = new Utils();
+    @FXML
+    private AnchorPane anchorPane;
+    @FXML
     String log;
     @FXML
     private AnchorPane root;
@@ -118,38 +122,44 @@ public class Schermata_login {
             }
 
         } else {
+            Utils utils = new Utils();
             log=nome_login.getText();
+            System.out.println(log);
+            utils.setUsername(log);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Successo");
             alert.setHeaderText("Successo");
             alert.setContentText("Benvenuto nel testing aica digComp2.2");
             alert.showAndWait();
-            apriSecondoStage();
+            apriSecondoStage(utils);
         }
     }
     }
     @FXML
-    private void apriSecondoStage() {
+    private void apriSecondoStage(Utils utils) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
             Parent root = loader.load();
 
-            // Crea e mostra il nuovo stage
+            // Recupera il controller associato al file FXML
+            HelloController controller = loader.getController();
+
+            // Passa i dati (username)
+            controller.setUtils(utils);
+
             Stage stage = new Stage();
             stage.setTitle("Seconda Finestra");
             stage.setScene(new Scene(root));
             stage.show();
-            controller.mostraMsg();
-            controller.setUsername(log);
 
-            // Chiudi lo stage corrente
+            // Chiudi la finestra corrente
             Stage currentStage = (Stage) login.getScene().getWindow();
             currentStage.close();
+
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
         }
     }
+
 
 }
