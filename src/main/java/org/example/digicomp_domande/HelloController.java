@@ -3,14 +3,10 @@ package org.example.digicomp_domande;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import org.example.digicomp_domande.*;
 
-import java.awt.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 
 public class HelloController {
@@ -23,9 +19,14 @@ public class HelloController {
     String com;
     String creaz;
     String sicurezza;
-    String prob;
+    String problemi;
     String selezione;
     String corretta;
+    Alert conferma = new Alert(Alert.AlertType.INFORMATION);
+    Alert comunicazione = new Alert(Alert.AlertType.INFORMATION);
+    Alert creazione = new Alert(Alert.AlertType.INFORMATION);
+    Alert sic = new  Alert(Alert.AlertType.INFORMATION);
+    Alert probl = new Alert(Alert.AlertType.INFORMATION);
     database db = new database();
 
     @FXML
@@ -41,29 +42,29 @@ public class HelloController {
     private ToggleGroup toggleGroup;
     private Toggle toggle;
     @FXML
-    public void initialize() throws SQLException, ClassNotFoundException {
+    public void initialize() throws Exception {
         db.connect();
+        conferma.setTitle("Attenzione");
+        conferma.setHeaderText("Attenzione");
+        conferma.setContentText("risposta inviata");
+        comunicazione.setTitle("Benvenuto");
+        comunicazione.setHeaderText("Benvenuto");
+        comunicazione.setContentText("la seconda area di competenza riguarderà Comunicazione e Collaborazione");
+        creazione.setTitle("Benvenuto");
+        creazione.setHeaderText("Benvenuto");
+        creazione.setContentText("la terza area di competenza riguarderà Creazione di contenuti digitali");
+        sic.setTitle("Benvenuto");
+        sic.setHeaderText("Benvenuto");
+        sic.setContentText("la quarta area di competenza riguarderà Sicurezza");
+        probl.setTitle("Benvenuto");
+        probl.setHeaderText("Benvenuto");
+        probl.setContentText("la quarta area di competenza riguarderà Sicurezza");
         toggleGroup = new ToggleGroup();
         radioButtona.setToggleGroup(toggleGroup);
         radioButtonb.setToggleGroup(toggleGroup);
         radioButtonc.setToggleGroup(toggleGroup);
         radioButtond.setToggleGroup(toggleGroup);
-        idgen =db.idDomandaCasuale(1,1);
-        txtDomanda.setText(db.getDomanda(idgen));
-        String answer = db.rispostaCorr(idgen);
-        ArrayList<String> answers = new ArrayList<>();
-        String rispostesb[];
-        rispostesb= db.risposteSbagliate(idgen);
-        answers.add(answer);
-        answers.add(rispostesb[0]);
-        answers.add(rispostesb[1]);
-        answers.add(rispostesb[2]);
-        Collections.shuffle(answers);
-        corretta = db.rispostaCorr(idgen);
-        radioButtona.setText(answers.get(0));
-        radioButtonb.setText(answers.get(1));
-        radioButtonc.setText(answers.get(2));
-        radioButtond.setText(answers.get(3));
+        setDomanda(1,1);
 
     }
         @FXML
@@ -119,21 +120,28 @@ public class HelloController {
                                     sicurezza = "base 1";
                                     break;
                                 case 5:
-                                    prob = "base 1";
+                                    problemi = "base 1";
                                     break;
                             }
                             area++;
                             cont=0;
                             //vabbè di qua fai la gen per l'area 2 con l'alert
+                            switch(area){
+                                case 2:
+
+                                    break;
+                                case 3:
+                                    break;
+                                case 4:
+                                    break;
+                                case 5:
+                                    break;
+                            }
                         }
                         break;
                     case 2:
-                        Alert  alert = new Alert(Alert.AlertType.INFORMATION);
-                        alert.setHeaderText("attenzione");
-                        alert.setContentText("risposta inviata");
-                        alert.showAndWait();
+                       conferma.showAndWait();
                         if (selezione.equals(corretta)) {
-                            System.out.println("ma va qua??");
                             toggleGroup.selectToggle(null);
                             idgen =db.idDomandaCasuale(area,2);
                             txtDomanda.setText(db.getDomanda(idgen));
@@ -152,19 +160,62 @@ public class HelloController {
                             radioButtonc.setText(answers.get(2));
                             radioButtond.setText(answers.get(3));
                             intermed++;
-                        }// va qua vabbè devi generare comunque le domande
+                        }else {
+                            toggleGroup.selectToggle(null);
+                            idgen =db.idDomandaCasuale(area,2);
+                            txtDomanda.setText(db.getDomanda(idgen));
+                            String answer = db.rispostaCorr(idgen);
+                            ArrayList<String> answers = new ArrayList<>();
+                            String rispostesb[];
+                            rispostesb= db.risposteSbagliate(idgen);
+                            answers.add(answer);
+                            answers.add(rispostesb[0]);
+                            answers.add(rispostesb[1]);
+                            answers.add(rispostesb[2]);
+                            Collections.shuffle(answers);
+                            corretta = db.rispostaCorr(idgen);
+                            radioButtona.setText(answers.get(0));
+                            radioButtonb.setText(answers.get(1));
+                            radioButtonc.setText(answers.get(2));
+                            radioButtond.setText(answers.get(3));
+                        }
                         break;
                     case 3:
                         if (selezione.equals(corretta)) {
                             if(intermed==0){
-                                //niente dai base 2 con l'alert
+                                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                                alert.setTitle("Congratulazioni");
+                                alert.setHeaderText("Congratulazioni");
+                                alert.setContentText("il suo livello di certificazione per questa area è base 2");
+                                alert.showAndWait();
+                                switch (area){
+                                    case 1:
+                                        alf = "base 2";
+                                        break;
+                                    case 2:
+                                        com = "base 2";
+                                        break;
+                                    case 3:
+                                        creaz = "base 2";
+                                        break;
+                                    case 4:
+                                        sicurezza = "base 2";
+                                        break;
+                                    case 5:
+                                        problemi = "base 2";
+                                        break;
+                                }
+                                cont= 0;
+                                area++;
+                                intermed= 0;
+                                // qua sempre la gen con lo switch per i messaggi
 
-                            }else {
-                                Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
-                                alert1.setTitle("Congratulazioni");
-                                alert1.setHeaderText("Congratulazioni");
-                                alert1.setContentText("livello base 2 completato, può proseguire con intermedio 2");
-                                alert1.showAndWait();
+                            }else if (selezione.equals(corretta)) {
+                                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                                alert.setTitle("Congratulazioni");
+                                alert.setHeaderText("Congratulazioni");
+                                alert.setContentText("livello base 2 completato, può proseguire con intermedio 2");
+                                alert.showAndWait();
                                 toggleGroup.selectToggle(null);
                                 intermed= 0;
                                 idgen =db.idDomandaCasuale(area,3);
@@ -186,14 +237,37 @@ public class HelloController {
                             }
 
                         }else {
-                            // vabbè qua niente sempre dai base 2
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Congratulazioni");
+                            alert.setHeaderText("Congratulazioni");
+                            alert.setContentText("il suo livello di certificazione per questa area è base 2");
+                            alert.showAndWait();
+                            switch (area){
+                                case 1:
+                                    alf = "base 2";
+                                    break;
+                                case 2:
+                                    com = "base 2";
+                                    break;
+                                case 3:
+                                    creaz = "base 2";
+                                    break;
+                                case 4:
+                                    sicurezza = "base 2";
+                                    break;
+                                case 5:
+                                    problemi = "base 2";
+                                    break;
+                            }
+                            area++;
+                            cont=0;
+                            intermed= 0;
+                            // sempre qua messaggi in base all'area con la generazione
+
                         }
                        break;
-                    case 4:
-                        Alert alert2 = new Alert(Alert.AlertType.INFORMATION);
-                        alert2.setHeaderText("attenzione");
-                        alert2.setContentText("risposta inviata");
-                        alert2.showAndWait();// primo messaggio
+                    case 4: // intermedio 3
+                        conferma.showAndWait();// primo messaggio
                         if (selezione.equals(corretta)) {
                             intermed++;
                         }
@@ -216,10 +290,7 @@ public class HelloController {
                         radioButtond.setText(answers.get(3));
                         break;
                     case 5:
-                        Alert  alert3 = new Alert(Alert.AlertType.INFORMATION);
-                        alert3.setHeaderText("attenzione");
-                        alert3.setContentText("risposta inviata");
-                        alert3.showAndWait();//secondo messaggio
+                        conferma.showAndWait();//secondo messaggio
                         if (selezione.equals(corretta)) {
                             intermed++;
                         }
@@ -241,10 +312,7 @@ public class HelloController {
                         radioButtond.setText(answers.get(3));
                         break;
                     case 6:
-                        Alert  alert4 = new Alert(Alert.AlertType.INFORMATION);
-                        alert4.setHeaderText("attenzione");
-                        alert4.setContentText("risposta inviata");
-                        alert4.showAndWait();
+                        conferma.showAndWait();
                         if (selezione.equals(corretta)) {
                             intermed++;
                         }
@@ -266,15 +334,17 @@ public class HelloController {
                         radioButtond.setText(answers.get(3));
                         break;
                     case 7:
-                        Alert  alert5 = new Alert(Alert.AlertType.INFORMATION);
-                        alert5.setHeaderText("attenzione");
-                        alert5.setContentText("risposta inviata");
-                        alert5.showAndWait();
+                        conferma.showAndWait();
                         if (selezione.equals(corretta)) {
                             intermed++;
                         }
                         if(intermed>=3){
                             //passa al livello intermedio 4
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Congratulazioni");
+                            alert.setHeaderText("Congratulazioni");
+                            alert.setContentText("è possibile procedere al livello intermedio 4");
+                            alert.showAndWait();
                             toggleGroup.selectToggle(null);
                             intermed=0;
                             idgen =db.idDomandaCasuale(area,4);      //prima generazione
@@ -294,14 +364,36 @@ public class HelloController {
                             radioButtond.setText(answers.get(3));
 
                         }else{
-                            // dai intermedio 3
+                           Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Congratulazioni");
+                            alert.setHeaderText("Congratulazioni");
+                            alert.setContentText("livello di certificazione raggiunto per questa area: intermedio 3");
+                            alert.showAndWait();
+                            switch(area){
+                                case 1:
+                                    alf = "intermedio 3";
+                                    break;
+                                case 2:
+                                    com = "intermedio 3";
+                                    break;
+                                case 3:
+                                    creaz = "intermedio 3";
+                                    break;
+                                case 4:
+                                    sicurezza = "intermedio 3";
+                                    break;
+                                case 5:
+                                    problemi = "intermedio 3";
+                                    break;
+                            }
+                            area++;
+                            cont = 0;
+                            intermed = 0;
+                            // qua sempre la gen con la nuova area
                         }
                         break;
                     case 8:
-                        Alert  alert6 = new Alert(Alert.AlertType.INFORMATION);
-                        alert6.setHeaderText("attenzione");
-                        alert6.setContentText("risposta inviata");
-                        alert6.showAndWait();
+                        conferma.showAndWait();
                         if (selezione.equals(corretta)) { // primo messaggio
                             intermed++;
                         }
@@ -323,10 +415,7 @@ public class HelloController {
                         radioButtond.setText(answers.get(3));
                         break;
                     case 9:
-                        Alert  alert7 = new Alert(Alert.AlertType.INFORMATION);
-                        alert7.setHeaderText("attenzione");
-                        alert7.setContentText("risposta inviata");
-                        alert7.showAndWait();
+                        conferma.showAndWait();
                         if (selezione.equals(corretta)) { // secondo messaggio
                             intermed++;
                         }
@@ -348,10 +437,7 @@ public class HelloController {
                         radioButtond.setText(answers.get(3));
                         break;
                     case 10:
-                        Alert  alert8 = new Alert(Alert.AlertType.INFORMATION);
-                        alert8.setHeaderText("attenzione");
-                        alert8.setContentText("risposta inviata");
-                        alert8.showAndWait();
+                        conferma.showAndWait();
                         if (selezione.equals(corretta)) { // terzo messaggio
                             intermed++;
                         }
@@ -373,20 +459,62 @@ public class HelloController {
                         radioButtond.setText(answers.get(3));
                         break;
                     case 11:// la prossima area va comunque generata qua
-                        Alert  alert9 = new Alert(Alert.AlertType.INFORMATION);
-                        alert9.setHeaderText("attenzione");
-                        alert9.setContentText("risposta inviata");
-                        alert9.showAndWait();
+                        conferma.showAndWait();
                         if (selezione.equals(corretta)) {//quarto messaggio
                             intermed++;
                         }
                         if(intermed>=3){
-                            //dai avanzato 5
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Information");
+                            alert.setHeaderText("Information");
+                            alert.setContentText("ha raggiunto il livello massimo ottenibile: Avanzato 5");
+                            alert.showAndWait();
+                            switch (area){
+                                case 1:
+                                    alf = "avanzato 5";
+                                    break;
+                                case 2:
+                                    com = "avanzato 5";
+                                    break;
+                                case 3:
+                                    creaz = "avanzato 5";
+                                    break;
+                                case 4:
+                                    sicurezza = "avanzato 5";
+                                    break;
+                                case 5:
+                                    problemi = "avanzato 5";
+                                    break;
+                            }
                             area++;
                             intermed= 0;
                             cont= 0;
+                            // sempre la gen
                         }else{
                             //dai intermedio 4
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Information");
+                            alert.setHeaderText("Information");
+                            alert.setContentText("il livello da lei ottenuto per questa area è: Intermedio 4");
+                            alert.showAndWait();
+                            switch (area){
+                                case 1:
+                                    alf = "intermedio 4";
+                                    break;
+                                case 2:
+                                    com = "intermedio 4";
+                                    break;
+                                case 3:
+                                    creaz = "intermedio 4";
+                                    break;
+                                case 4:
+                                    sicurezza = "intermedio 4";
+                                    break;
+                                case 5:
+                                    problemi = "intermedio 4";
+                                    break;
+
+                            }
                             area++;
                             intermed = 0;
                             cont= 0;
@@ -414,6 +542,26 @@ public class HelloController {
             alert.setHeaderText("Benvenuto nel testing AICA digComp2.2");
             alert.setContentText("inizierai dalla prima area: Alfabetizzazione su informazioni e dati \n tempo limite: 90 minuti");
             alert.showAndWait();
+        }
+        @FXML
+        public void setDomanda(int Area,int livello) throws Exception{
+            toggleGroup.selectToggle(null);
+            idgen =db.idDomandaCasuale(Area,livello);
+            txtDomanda.setText(db.getDomanda(idgen));
+            String answer = db.rispostaCorr(idgen);
+            ArrayList<String> answers = new ArrayList<>();
+            String rispostesb[];
+            rispostesb= db.risposteSbagliate(idgen);
+            answers.add(answer);
+            answers.add(rispostesb[0]);
+            answers.add(rispostesb[1]);
+            answers.add(rispostesb[2]);
+            Collections.shuffle(answers);
+            corretta = db.rispostaCorr(idgen);
+            radioButtona.setText(answers.get(0));
+            radioButtonb.setText(answers.get(1));
+            radioButtonc.setText(answers.get(2));
+            radioButtond.setText(answers.get(3));
         }
 }
 
