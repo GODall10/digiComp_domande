@@ -37,6 +37,7 @@ public class HelloController {
     Alert probl = new Alert(Alert.AlertType.INFORMATION);
     database db = new database();
     String a,b,c,d,e;
+    String username;
 
     @FXML
     private TextField txtDomanda;
@@ -51,8 +52,13 @@ public class HelloController {
     private ToggleGroup toggleGroup;
     private Toggle toggle;
     @FXML
+    private TextField nDomanda;
+    @FXML
+    private TextField Area;
+    @FXML
     public void initialize() throws Exception {
         db.connect();
+        btnIndovina.setDefaultButton(true);
         conferma.setTitle("Attenzione");
         conferma.setHeaderText("Attenzione");
         conferma.setContentText("risposta inviata");
@@ -74,6 +80,9 @@ public class HelloController {
         radioButtonc.setToggleGroup(toggleGroup);
         radioButtond.setToggleGroup(toggleGroup);
         setDomanda(1,1);
+        nDomanda.setText("1");
+        Area.setText("Alfabetizzazione su informazioni e dati");
+
 
     }
         @FXML
@@ -93,6 +102,7 @@ public class HelloController {
                             alert.setContentText("Il livello base 1 è stato passato può procedere al livello base 2 \n le saranno chieste 2 domande stavolta");
                             alert.showAndWait();
                             setDomanda(area, 2);
+                            nDomanda.setText("2");
                         }else {
                             Alert alert = new Alert(Alert.AlertType.INFORMATION);
                             setLivello(area,"base 1");
@@ -106,6 +116,7 @@ public class HelloController {
                         break;
                     case 2:
                        conferma.showAndWait();
+                       nDomanda.setText("3");
                         if (selezione.equals(corretta)) {
                            setDomanda(area, 2);
                            intermed++;
@@ -121,23 +132,7 @@ public class HelloController {
                                 alert.setHeaderText("Congratulazioni");
                                 alert.setContentText("il suo livello di certificazione per questa area è base 2");
                                 alert.showAndWait();
-                                switch (area){
-                                    case 1:
-                                        alf = "base 2";
-                                        break;
-                                    case 2:
-                                        com = "base 2";
-                                        break;
-                                    case 3:
-                                        creaz = "base 2";
-                                        break;
-                                    case 4:
-                                        sicurezza = "base 2";
-                                        break;
-                                    case 5:
-                                        problemi = "base 2";
-                                        break;
-                                }
+                                setLivello(area,"base 2");
                                 resetArea();
 
                             }else if (selezione.equals(corretta)) {
@@ -146,6 +141,7 @@ public class HelloController {
                                 alert.setHeaderText("Congratulazioni");
                                 alert.setContentText("livello base 2 completato, può proseguire con intermedio 2");
                                 alert.showAndWait();
+                                nDomanda.setText("4");
                                 setDomanda(area,3);
                             }
 
@@ -155,36 +151,23 @@ public class HelloController {
                             alert.setHeaderText("Congratulazioni");
                             alert.setContentText("il suo livello di certificazione per questa area è base 2");
                             alert.showAndWait();
-                            switch (area){
-                                case 1:
-                                    alf = "base 2";
-                                    break;
-                                case 2:
-                                    com = "base 2";
-                                    break;
-                                case 3:
-                                    creaz = "base 2";
-                                    break;
-                                case 4:
-                                    sicurezza = "base 2";
-                                    break;
-                                case 5:
-                                    problemi = "base 2";
-                                    break;
-                            }
+                            setLivello(area,"base 2");
                             resetArea();
 
                         }
                        break;
                     case 4: // intermedio 3
-                        conferma.showAndWait();// primo messaggio
+                        conferma.showAndWait();
+                        nDomanda.setText("5");
+                        // primo messaggio
                         if (selezione.equals(corretta)) {
                             intermed++;
                         }
                         setDomanda(area,3);
                         break;
                     case 5:
-                        conferma.showAndWait();//secondo messaggio
+                        conferma.showAndWait();
+                        nDomanda.setText("6");//secondo messaggio
                         if (selezione.equals(corretta)) {
                             intermed++;
                         }
@@ -192,6 +175,7 @@ public class HelloController {
                         break;
                     case 6:
                         conferma.showAndWait();
+                        nDomanda.setText("7");
                         if (selezione.equals(corretta)) {
                             intermed++;
                         }
@@ -210,6 +194,7 @@ public class HelloController {
                             alert.setContentText("è possibile procedere al livello intermedio 4");
                             alert.showAndWait();
                             intermed=0;
+                            nDomanda.setText("8");
                             setDomanda(area,4);
 
                         }else{
@@ -218,28 +203,13 @@ public class HelloController {
                             alert.setHeaderText("Congratulazioni");
                             alert.setContentText("livello di certificazione raggiunto per questa area: intermedio 3");
                             alert.showAndWait();
-                            switch(area){
-                                case 1:
-                                    alf = "intermedio 3";
-                                    break;
-                                case 2:
-                                    com = "intermedio 3";
-                                    break;
-                                case 3:
-                                    creaz = "intermedio 3";
-                                    break;
-                                case 4:
-                                    sicurezza = "intermedio 3";
-                                    break;
-                                case 5:
-                                    problemi = "intermedio 3";
-                                    break;
-                            }
+                            setLivello(area,"intermedio 3");
                             resetArea();
                         }
                         break;
                     case 8:
                         conferma.showAndWait();
+                        nDomanda.setText("9");
                         if (selezione.equals(corretta)) { // primo messaggio
                             intermed++;
                         }
@@ -247,6 +217,7 @@ public class HelloController {
                         break;
                     case 9:
                         conferma.showAndWait();
+                        nDomanda.setText("10");
                         if (selezione.equals(corretta)) { // secondo messaggio
                             intermed++;
                         }
@@ -254,6 +225,7 @@ public class HelloController {
                         break;
                     case 10:
                         conferma.showAndWait();
+                        nDomanda.setText("11");
                         if (selezione.equals(corretta)) { // terzo messaggio
                             intermed++;
                         }
@@ -270,26 +242,7 @@ public class HelloController {
                             alert.setHeaderText("Information");
                             alert.setContentText("ha raggiunto il livello massimo ottenibile: Avanzato 5");
                             alert.showAndWait();
-                            switch (area){
-                                case 1:
-                                    alf = "avanzato 5";
-                                    break;
-                                case 2:
-                                    com = "avanzato 5";
-                                    break;
-                                case 3:
-                                    creaz = "avanzato 5";
-                                    break;
-                                case 4:
-                                    sicurezza = "avanzato 5";
-                                    break;
-                                case 5:
-                                    problemi = "avanzato 5";
-                                    break;
-                                default:
-                                    System.out.println("ma non è che va qua??");
-                                    break;
-                            }
+                            setLivello(area,"Avanzato 5");
                             resetArea();
                         }else{
                             //dai intermedio 4
@@ -298,24 +251,7 @@ public class HelloController {
                             alert.setHeaderText("Information");
                             alert.setContentText("il livello da lei ottenuto per questa area è: Intermedio 4");
                             alert.showAndWait();
-                            switch (area){
-                                case 1:
-                                    alf = "intermedio 4";
-                                    break;
-                                case 2:
-                                    com = "intermedio 4";
-                                    break;
-                                case 3:
-                                    creaz = "intermedio 4";
-                                    break;
-                                case 4:
-                                    sicurezza = "intermedio 4";
-                                    break;
-                                case 5:
-                                    problemi = "intermedio 4";
-                                    break;
-
-                            }
+                            setLivello(area,"Intermedio 4");
                             resetArea();
                         }
                 }
@@ -358,24 +294,30 @@ public class HelloController {
             radioButtonb.setText(answers.get(1));
             radioButtonc.setText(answers.get(2));
             radioButtond.setText(answers.get(3));
+            System.out.println(username);
         }
         @FXML
         public void resetArea() throws Exception{
             area++;
             cont=0;
             intermed= 0;
+            nDomanda.setText("1");
             switch(area){
                 case 2:
                     comunicazione.showAndWait();
+                    Area.setText("comunicazione e collaborazione");
                     break;
                 case 3:
                     creazione.showAndWait();
+                    Area.setText("creazione di contenuti digitali");
                     break;
                 case 4:
                     sic.showAndWait();
+                    Area.setText("Sicurezza");
                     break;
                 case 5:
                     probl.showAndWait();
+                    Area.setText("Risolvere problemi");
                     break;
                 case 6:
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -383,11 +325,6 @@ public class HelloController {
                     alert.setHeaderText("Risultati");
                     alert.setContentText("congratulazioni, hai finito il test. procederai al risultato");
                     alert.showAndWait();
-                    System.out.println(alf);
-                    System.out.println(com);
-                    System.out.println(creaz);
-                    System.out.println(sicurezza);
-                    System.out.println(problemi);
                     apriSecondoStage();
             }
             if(area!=6){
@@ -399,7 +336,6 @@ public class HelloController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("schermata_finale.fxml"));
             Parent root = loader.load();
 
-            // Crea e mostra il nuovo stage
             Stage nuovoStage = new Stage();
             nuovoStage.setTitle("Seconda Finestra");
             nuovoStage.setScene(new Scene(root));
@@ -410,6 +346,7 @@ public class HelloController {
             controller.setCreaz(creaz);
             controller.setSicurezza(sicurezza);
             controller.setProb(problemi);
+            controller.setUsername(username);
             // Chiudi lo stage corrente cercando lo stage attivo tra tutte le finestre
             for (Window window : Stage.getWindows()) {
                 if (window.isShowing() && window != nuovoStage) {
@@ -430,6 +367,9 @@ public class HelloController {
                 case 4->sicurezza=livello;
                 case 5->problemi=livello;
             }
+    }
+    public void setUsername(String user) throws Exception{
+           username=user;
     }
 
 

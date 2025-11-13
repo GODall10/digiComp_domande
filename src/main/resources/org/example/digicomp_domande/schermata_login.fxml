@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="306.0" prefWidth="372.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.digicomp_domande.Schermata_login">
+<AnchorPane fx:id="root" prefHeight="306.0" prefWidth="372.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.digicomp_domande.Schermata_login">
    <children>
       <Label alignment="CENTER" layoutX="141.0" layoutY="38.0" prefHeight="39.0" prefWidth="90.0" text="Benvenuto">
          <font>

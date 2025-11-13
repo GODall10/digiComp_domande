@@ -9,6 +9,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import org.example.digicomp_domande.*;
 
@@ -19,6 +21,9 @@ public class Schermata_login {
     String username;
     db_login db_login= new db_login();
     HelloController controller = new HelloController();
+    String log;
+    @FXML
+    private AnchorPane root;
     @FXML
     private TextField nome_login;
     @FXML
@@ -30,6 +35,13 @@ public class Schermata_login {
     @FXML
     public void initialize(){
         db_login.connect();
+        root.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                login.fire(); // esegue il tasto
+            }
+        });
+        root.setFocusTraversable(true);
+        root.requestFocus();
     }
     @FXML
     private void Register() throws IOException, SQLException {
@@ -106,7 +118,7 @@ public class Schermata_login {
             }
 
         } else {
-            System.out.println("tutto apposto");
+            log=nome_login.getText();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Successo");
             alert.setHeaderText("Successo");
@@ -128,12 +140,15 @@ public class Schermata_login {
             stage.setScene(new Scene(root));
             stage.show();
             controller.mostraMsg();
+            controller.setUsername(log);
 
             // Chiudi lo stage corrente
             Stage currentStage = (Stage) login.getScene().getWindow();
             currentStage.close();
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
 
