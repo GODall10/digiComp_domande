@@ -31,7 +31,10 @@ public class schermatafinale_controller {
     private Button genera;
     @FXML
     public void genera(){
-        alf=app.getalf();
+        System.out.println(alf);
+    }
+        /*alf=app.getalf();
+        System.out.println("campo "+alf);
         com=app.getcom();
         creaz=app.getcreaz();
         sic=app.getsic();
@@ -41,7 +44,7 @@ public class schermatafinale_controller {
         creazione.setText(creaz);
         sicurezza.setText(sic);
         problemi.setText(prob);
-        switch (alf){
+        /*switch (alf){
             case "base 1":
                 a=1;
                 break;
@@ -152,5 +155,8 @@ public class schermatafinale_controller {
         }
 
 
+    }*/
+    public void setAlf(String livello){
+        alf=livello;
     }
 }

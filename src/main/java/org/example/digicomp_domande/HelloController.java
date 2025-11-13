@@ -36,6 +36,7 @@ public class HelloController {
     Alert sic = new  Alert(Alert.AlertType.INFORMATION);
     Alert probl = new Alert(Alert.AlertType.INFORMATION);
     database db = new database();
+    String a,b,c,d,e;
 
     @FXML
     private TextField txtDomanda;
@@ -94,27 +95,11 @@ public class HelloController {
                             setDomanda(area, 2);
                         }else {
                             Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            setLivello(area,"base 1");
                             alert.setTitle("Congratulazioni");
                             alert.setHeaderText("Congratulazioni");
                             alert.setContentText("il suo livello di certificazione per questa area è base 1");
                             alert.showAndWait();
-                            switch (area){
-                                case 1:
-                                    alf = "base 1";
-                                    break;
-                                case 2:
-                                    com = "base 1";
-                                    break;
-                                case 3:
-                                    creaz = "base 1";
-                                    break;
-                                case 4:
-                                    sicurezza = "base 1";
-                                    break;
-                                case 5:
-                                    problemi = "base 1";
-                                    break;
-                            }
                             resetArea();
 
                         }
@@ -301,6 +286,9 @@ public class HelloController {
                                 case 5:
                                     problemi = "avanzato 5";
                                     break;
+                                default:
+                                    System.out.println("ma non è che va qua??");
+                                    break;
                             }
                             resetArea();
                         }else{
@@ -395,6 +383,17 @@ public class HelloController {
                     alert.setHeaderText("Risultati");
                     alert.setContentText("congratulazioni, hai finito il test. procederai al risultato");
                     alert.showAndWait();
+                    System.out.println(alf);
+                    System.out.println(com);
+                    System.out.println(creaz);
+                    System.out.println(sicurezza);
+                    System.out.println(problemi);
+                    a=alf;
+                    b=com;
+                    c=creaz;
+                    d=sicurezza;
+                    e=problemi;
+
                     apriSecondoStage();
             }
             if(area!=6){
@@ -411,6 +410,8 @@ public class HelloController {
             nuovoStage.setTitle("Seconda Finestra");
             nuovoStage.setScene(new Scene(root));
             nuovoStage.show();
+            schermatafinale_controller controller = loader.getController();
+            controller.setAlf(alf);
 
             // Chiudi lo stage corrente cercando lo stage attivo tra tutte le finestre
             for (Window window : Stage.getWindows()) {
@@ -425,19 +426,19 @@ public class HelloController {
         }
     }
     public String getalf(){
-            return alf;
+            return a;
     }
     public String getcom(){
-        return com;
+        return b;
     }
     public String getcreaz(){
-            return creaz;
+            return c;
     }
     public String getsic(){
-            return sicurezza;
+            return d;
     }
     public String getprob(){
-            return problemi;
+            return e;
     }
     public void setLivello(int area, String livello) throws Exception{
             switch (area){
