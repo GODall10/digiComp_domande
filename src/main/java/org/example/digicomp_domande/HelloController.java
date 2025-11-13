@@ -412,8 +412,10 @@ public class HelloController {
             nuovoStage.show();
             schermatafinale_controller controller = loader.getController();
             controller.setAlf(alf);
-
-
+            controller.setCom(com);
+            controller.setCreaz(creaz);
+            controller.setSicurezza(sicurezza);
+            controller.setProb(problemi);
             // Chiudi lo stage corrente cercando lo stage attivo tra tutte le finestre
             for (Window window : Stage.getWindows()) {
                 if (window.isShowing() && window != nuovoStage) {
