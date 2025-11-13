@@ -1415,18 +1415,19 @@ const questions = {
         area: 4,
         livelloDifficolta: 4
     },
+    //area 5
     201: {
         domanda: "Cosa fare se il computer non si accende?",
         rispostaCorretta: "Verificare l’alimentazione e i cavi collegati",
         risposteErrate: ["Reinstallare il sistema operativo subito", "Cercare virus online", "Cambiare il mouse"],
-        area: 4,
+        area: 5,
         livelloDifficolta: 1
     },
     202: {
         domanda: "Cosa fare se un programma si blocca?",
         rispostaCorretta: "Chiuderlo e riaprirlo",
         risposteErrate: ["Spegnere il computer senza salvare", "Cancellare tutti i file", "Installare un antivirus"],
-        area: 4,
+        area: 5,
         livelloDifficolta: 1
     },
     203: {
@@ -1748,7 +1749,7 @@ const questions = {
         domanda: "Come risolvere problemi di compatibilità critica tra software aziendali?",
         rispostaCorretta: "Verificare versioni, aggiornamenti, dipendenze e test in ambienti controllati",
         risposteErrate: ["Disinstallare tutto", "Ignorare problemi", "Spegnere computer"],
-        area: 4,
+        area:4,
         livelloDifficolta: 4
     },
     249: {

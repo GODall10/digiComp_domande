@@ -58,7 +58,7 @@ public class HelloController {
         sic.setContentText("la quarta area di competenza riguarderà Sicurezza");
         probl.setTitle("Benvenuto");
         probl.setHeaderText("Benvenuto");
-        probl.setContentText("la quarta area di competenza riguarderà Sicurezza");
+        probl.setContentText("la quinta area di competenza riguarderà Sicurezza");
         toggleGroup = new ToggleGroup();
         radioButtona.setToggleGroup(toggleGroup);
         radioButtonb.setToggleGroup(toggleGroup);
@@ -68,7 +68,7 @@ public class HelloController {
 
     }
         @FXML
-        public void indovina() throws SQLException, ClassNotFoundException {
+        public void indovina() throws Exception {
             if(toggleGroup.getSelectedToggle()!=null) {
                 cont++;
                 toggle = toggleGroup.getSelectedToggle();
@@ -83,23 +83,7 @@ public class HelloController {
                             alert.setHeaderText("Congratulazioni");
                             alert.setContentText("Il livello base 1 è stato passato può procedere al livello base 2 \n le saranno chieste 2 domande stavolta");
                             alert.showAndWait();
-                            toggleGroup.selectToggle(null);
-                            idgen =db.idDomandaCasuale(area,2);
-                            txtDomanda.setText(db.getDomanda(idgen));
-                            String answer = db.rispostaCorr(idgen);
-                            ArrayList<String> answers = new ArrayList<>();
-                            String rispostesb[];
-                            rispostesb= db.risposteSbagliate(idgen);
-                            answers.add(answer);
-                            answers.add(rispostesb[0]);
-                            answers.add(rispostesb[1]);
-                            answers.add(rispostesb[2]);
-                            Collections.shuffle(answers);
-                            corretta = db.rispostaCorr(idgen);
-                            radioButtona.setText(answers.get(0));
-                            radioButtonb.setText(answers.get(1));
-                            radioButtonc.setText(answers.get(2));
-                            radioButtond.setText(answers.get(3));
+                            setDomanda(area, 2);
                         }else {
                             Alert alert = new Alert(Alert.AlertType.INFORMATION);
                             alert.setTitle("Congratulazioni");
@@ -125,59 +109,30 @@ public class HelloController {
                             }
                             area++;
                             cont=0;
-                            //vabbè di qua fai la gen per l'area 2 con l'alert
                             switch(area){
                                 case 2:
-
+                                    comunicazione.showAndWait();
                                     break;
                                 case 3:
+                                    creazione.showAndWait();
                                     break;
                                 case 4:
+                                    sic.showAndWait();
                                     break;
                                 case 5:
+                                    probl.showAndWait();
                                     break;
                             }
+                           setDomanda(area,1);
                         }
                         break;
                     case 2:
                        conferma.showAndWait();
                         if (selezione.equals(corretta)) {
-                            toggleGroup.selectToggle(null);
-                            idgen =db.idDomandaCasuale(area,2);
-                            txtDomanda.setText(db.getDomanda(idgen));
-                            String answer = db.rispostaCorr(idgen);
-                            ArrayList<String> answers = new ArrayList<>();
-                            String rispostesb[];
-                            rispostesb= db.risposteSbagliate(idgen);
-                            answers.add(answer);
-                            answers.add(rispostesb[0]);
-                            answers.add(rispostesb[1]);
-                            answers.add(rispostesb[2]);
-                            Collections.shuffle(answers);
-                            corretta = db.rispostaCorr(idgen);
-                            radioButtona.setText(answers.get(0));
-                            radioButtonb.setText(answers.get(1));
-                            radioButtonc.setText(answers.get(2));
-                            radioButtond.setText(answers.get(3));
-                            intermed++;
+                           setDomanda(area, 2);
+                           intermed++;
                         }else {
-                            toggleGroup.selectToggle(null);
-                            idgen =db.idDomandaCasuale(area,2);
-                            txtDomanda.setText(db.getDomanda(idgen));
-                            String answer = db.rispostaCorr(idgen);
-                            ArrayList<String> answers = new ArrayList<>();
-                            String rispostesb[];
-                            rispostesb= db.risposteSbagliate(idgen);
-                            answers.add(answer);
-                            answers.add(rispostesb[0]);
-                            answers.add(rispostesb[1]);
-                            answers.add(rispostesb[2]);
-                            Collections.shuffle(answers);
-                            corretta = db.rispostaCorr(idgen);
-                            radioButtona.setText(answers.get(0));
-                            radioButtonb.setText(answers.get(1));
-                            radioButtonc.setText(answers.get(2));
-                            radioButtond.setText(answers.get(3));
+                            setDomanda(area, 2);
                         }
                         break;
                     case 3:
@@ -209,6 +164,21 @@ public class HelloController {
                                 area++;
                                 intermed= 0;
                                 // qua sempre la gen con lo switch per i messaggi
+                                switch(area){
+                                    case 2:
+                                        comunicazione.showAndWait();
+                                        break;
+                                    case 3:
+                                        creazione.showAndWait();
+                                        break;
+                                    case 4:
+                                        sic.showAndWait();
+                                        break;
+                                    case 5:
+                                        probl.showAndWait();
+                                        break;
+                                }
+                                setDomanda(area,1);
 
                             }else if (selezione.equals(corretta)) {
                                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -216,24 +186,7 @@ public class HelloController {
                                 alert.setHeaderText("Congratulazioni");
                                 alert.setContentText("livello base 2 completato, può proseguire con intermedio 2");
                                 alert.showAndWait();
-                                toggleGroup.selectToggle(null);
-                                intermed= 0;
-                                idgen =db.idDomandaCasuale(area,3);
-                                txtDomanda.setText(db.getDomanda(idgen));
-                                String answer = db.rispostaCorr(idgen);
-                                ArrayList<String> answers = new ArrayList<>();
-                                String rispostesb[];
-                                rispostesb= db.risposteSbagliate(idgen);
-                                answers.add(answer);
-                                answers.add(rispostesb[0]);
-                                answers.add(rispostesb[1]);
-                                answers.add(rispostesb[2]);
-                                Collections.shuffle(answers);
-                                corretta = db.rispostaCorr(idgen);
-                                radioButtona.setText(answers.get(0));
-                                radioButtonb.setText(answers.get(1));
-                                radioButtonc.setText(answers.get(2));
-                                radioButtond.setText(answers.get(3));
+                                setDomanda(area,3);
                             }
 
                         }else {
@@ -262,7 +215,21 @@ public class HelloController {
                             area++;
                             cont=0;
                             intermed= 0;
-                            // sempre qua messaggi in base all'area con la generazione
+                            switch(area){
+                                case 2:
+                                    comunicazione.showAndWait();
+                                    break;
+                                case 3:
+                                    creazione.showAndWait();
+                                    break;
+                                case 4:
+                                    sic.showAndWait();
+                                    break;
+                                case 5:
+                                    probl.showAndWait();
+                                    break;
+                            }
+                            setDomanda(area,1);
 
                         }
                        break;
@@ -271,67 +238,21 @@ public class HelloController {
                         if (selezione.equals(corretta)) {
                             intermed++;
                         }
-                        toggleGroup.selectToggle(null);
-                        idgen =db.idDomandaCasuale(area,3);      //seconda generazione
-                        txtDomanda.setText(db.getDomanda(idgen));
-                        String answer = db.rispostaCorr(idgen);
-                        ArrayList<String> answers = new ArrayList<>();
-                        String rispostesb[];
-                        rispostesb= db.risposteSbagliate(idgen);
-                        answers.add(answer);
-                        answers.add(rispostesb[0]);
-                        answers.add(rispostesb[1]);
-                        answers.add(rispostesb[2]);
-                        Collections.shuffle(answers);
-                        corretta = db.rispostaCorr(idgen);
-                        radioButtona.setText(answers.get(0));
-                        radioButtonb.setText(answers.get(1));
-                        radioButtonc.setText(answers.get(2));
-                        radioButtond.setText(answers.get(3));
+                        setDomanda(area,3);
                         break;
                     case 5:
                         conferma.showAndWait();//secondo messaggio
                         if (selezione.equals(corretta)) {
                             intermed++;
                         }
-                        toggleGroup.selectToggle(null);
-                        idgen =db.idDomandaCasuale(area,3);      //terza generazione
-                        txtDomanda.setText(db.getDomanda(idgen));
-                        answer = db.rispostaCorr(idgen);
-                        answers = new ArrayList<>();
-                        rispostesb= db.risposteSbagliate(idgen);
-                        answers.add(answer);
-                        answers.add(rispostesb[0]);
-                        answers.add(rispostesb[1]);
-                        answers.add(rispostesb[2]);
-                        Collections.shuffle(answers);
-                        corretta = db.rispostaCorr(idgen);
-                        radioButtona.setText(answers.get(0));
-                        radioButtonb.setText(answers.get(1));
-                        radioButtonc.setText(answers.get(2));
-                        radioButtond.setText(answers.get(3));
+                        setDomanda(area,3);
                         break;
                     case 6:
                         conferma.showAndWait();
                         if (selezione.equals(corretta)) {
                             intermed++;
                         }
-                        toggleGroup.selectToggle(null);
-                        idgen =db.idDomandaCasuale(area,3);      //quarta generazione
-                        txtDomanda.setText(db.getDomanda(idgen));
-                        answer = db.rispostaCorr(idgen);
-                        answers = new ArrayList<>();
-                        rispostesb= db.risposteSbagliate(idgen);
-                        answers.add(answer);
-                        answers.add(rispostesb[0]);
-                        answers.add(rispostesb[1]);
-                        answers.add(rispostesb[2]);
-                        Collections.shuffle(answers);
-                        corretta = db.rispostaCorr(idgen);
-                        radioButtona.setText(answers.get(0));
-                        radioButtonb.setText(answers.get(1));
-                        radioButtonc.setText(answers.get(2));
-                        radioButtond.setText(answers.get(3));
+                        setDomanda(area,3);
                         break;
                     case 7:
                         conferma.showAndWait();
@@ -345,23 +266,8 @@ public class HelloController {
                             alert.setHeaderText("Congratulazioni");
                             alert.setContentText("è possibile procedere al livello intermedio 4");
                             alert.showAndWait();
-                            toggleGroup.selectToggle(null);
                             intermed=0;
-                            idgen =db.idDomandaCasuale(area,4);      //prima generazione
-                            txtDomanda.setText(db.getDomanda(idgen));
-                            answer = db.rispostaCorr(idgen);
-                            answers = new ArrayList<>();
-                            rispostesb= db.risposteSbagliate(idgen);
-                            answers.add(answer);
-                            answers.add(rispostesb[0]);
-                            answers.add(rispostesb[1]);
-                            answers.add(rispostesb[2]);
-                            Collections.shuffle(answers);
-                            corretta = db.rispostaCorr(idgen);
-                            radioButtona.setText(answers.get(0));
-                            radioButtonb.setText(answers.get(1));
-                            radioButtonc.setText(answers.get(2));
-                            radioButtond.setText(answers.get(3));
+                            setDomanda(area,4);
 
                         }else{
                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -397,66 +303,21 @@ public class HelloController {
                         if (selezione.equals(corretta)) { // primo messaggio
                             intermed++;
                         }
-                        toggleGroup.selectToggle(null);
-                        idgen =db.idDomandaCasuale(area,4);      //seconda generazione
-                        txtDomanda.setText(db.getDomanda(idgen));
-                        answer = db.rispostaCorr(idgen);
-                        answers = new ArrayList<>();
-                        rispostesb= db.risposteSbagliate(idgen);
-                        answers.add(answer);
-                        answers.add(rispostesb[0]);
-                        answers.add(rispostesb[1]);
-                        answers.add(rispostesb[2]);
-                        Collections.shuffle(answers);
-                        corretta = db.rispostaCorr(idgen);
-                        radioButtona.setText(answers.get(0));
-                        radioButtonb.setText(answers.get(1));
-                        radioButtonc.setText(answers.get(2));
-                        radioButtond.setText(answers.get(3));
+                        setDomanda(area,4);
                         break;
                     case 9:
                         conferma.showAndWait();
                         if (selezione.equals(corretta)) { // secondo messaggio
                             intermed++;
                         }
-                        toggleGroup.selectToggle(null);
-                        idgen =db.idDomandaCasuale(area,4);      //terza generazione
-                        txtDomanda.setText(db.getDomanda(idgen));
-                        answer = db.rispostaCorr(idgen);
-                        answers = new ArrayList<>();
-                        rispostesb= db.risposteSbagliate(idgen);
-                        answers.add(answer);
-                        answers.add(rispostesb[0]);
-                        answers.add(rispostesb[1]);
-                        answers.add(rispostesb[2]);
-                        Collections.shuffle(answers);
-                        corretta = db.rispostaCorr(idgen);
-                        radioButtona.setText(answers.get(0));
-                        radioButtonb.setText(answers.get(1));
-                        radioButtonc.setText(answers.get(2));
-                        radioButtond.setText(answers.get(3));
+                        setDomanda(area,4);
                         break;
                     case 10:
                         conferma.showAndWait();
                         if (selezione.equals(corretta)) { // terzo messaggio
                             intermed++;
                         }
-                        toggleGroup.selectToggle(null);
-                        idgen =db.idDomandaCasuale(area,4);      //quarta generazione
-                        txtDomanda.setText(db.getDomanda(idgen));
-                        answer = db.rispostaCorr(idgen);
-                        answers = new ArrayList<>();
-                        rispostesb= db.risposteSbagliate(idgen);
-                        answers.add(answer);
-                        answers.add(rispostesb[0]);
-                        answers.add(rispostesb[1]);
-                        answers.add(rispostesb[2]);
-                        Collections.shuffle(answers);
-                        corretta = db.rispostaCorr(idgen);
-                        radioButtona.setText(answers.get(0));
-                        radioButtonb.setText(answers.get(1));
-                        radioButtonc.setText(answers.get(2));
-                        radioButtond.setText(answers.get(3));
+                        setDomanda(area,4);
                         break;
                     case 11:// la prossima area va comunque generata qua
                         conferma.showAndWait();

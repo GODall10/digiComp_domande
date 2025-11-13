@@ -37,7 +37,7 @@ public class database {
     private static Statement stmt;
     private static PreparedStatement pstmt;
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
 
         try {
             // Carico il driver (opzionale nelle versioni moderne, ma buono per compatibilità)
@@ -52,48 +52,11 @@ public class database {
             pstmt = conn.prepareStatement(INSERT);
 
             // Esempio di utilizzo
-            creaTabella();
-            inserisciDomanda(
-                    "Che cos’è un browser?",
-                    "Un programma che permette di navigare su Internet",
-                    "Un motore di ricerca, Un sistema operativo, Un social network",
-                    1,
-                    1);
-            inserisciDomanda(
-                    "Che cosa indica il dominio .gov in un sito web?",
-                    "Un sito appartenente a un ente governativo",
-                    "Un sito scolastico, Un social network, Un blog personale",
-                    1,
-                    2
-            );
-            inserisciDomanda(
-                    "Come si verifica l’affidabilità di una fonte online?",
-                    "Controllando autore, data e dominio del sito",
-                    "Guardando solo le immagini, Se ha molti commenti, Se appare su social media",
-                    1,
-                    3
-            );
-            inserisciDomanda(
-                    "Che cosa si intende per ‘algoritmo di raccomandazione’?",
-                    "Un sistema che suggerisce contenuti in base ai dati dell’utente",
-                    "Un programma di traduzione, Un antivirus, Un file di configurazione",
-                    1,
-                    4
-            );
-            inserisciDomanda(
-                    "Come si può verificare l’autenticità di un documento digitale?",
-                    "Controllando la firma digitale o il certificato del documento",
-                    "Guardando il nome del file, Stampandolo, Condividendolo online",
-                    1,
-                    4
-            );
-
-            chiudiTabella();
 
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(database.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
+    }*/
 
     //  Metodo per creare la tabella
     private static void creaTabella() throws SQLException {
@@ -223,10 +186,41 @@ public static void connect() throws SQLException, ClassNotFoundException {
         inserisciDomanda(
                 "Cosa rappresenta l’icona della lente di ingrandimento in un sito web?",
                 "Lo strumento di ricerca",
-                "[\"Il pulsante per chiudere\", \"Il menu delle impostazioni\", \"Il tasto di download\"]",
+                "\"Il pulsante per chiudere\", \"Il menu delle impostazioni\", \"Il tasto di download\"",
                 1,
                 1
         );
+        inserisciDomanda(
+                "Qual è lo scopo principale di una email?",
+                "Comunicare messaggi in forma scritta",
+                "Creare video, Modificare documenti, Disegnare immagini",
+                2,
+                1
+        );
+        inserisciDomanda(
+                "Qual è lo scopo principale di un editor di testo?",
+                "Scrivere e modificare documenti",
+                "Creare video, Modificare immagini, Gestire email",
+                3,
+                1
+        );
+        inserisciDomanda(
+                "Cosa significa avere una password sicura?",
+                "Usare una combinazione di lettere, numeri e simboli",
+                "Usare solo il proprio nome, Scrivere la password su un foglio, Usare solo numeri facili da ricordare",
+                4,
+                1
+        );
+        inserisciDomanda(
+                "Cosa fare se il computer non si accende?",
+                "Verificare l’alimentazione e i cavi collegati",
+                "Reinstallare il sistema operativo subito, Cercare virus online, Cambiare il mouse",
+                5,
+                1
+        );
+
+
+
     }
 }
     public static int idDomandaCasuale(int area,int livello)throws SQLException, ClassNotFoundException {
