@@ -1,10 +1,18 @@
 package org.example.digicomp_domande;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import javafx.stage.Window;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -90,13 +98,13 @@ public class HelloController {
                             alert.setHeaderText("Congratulazioni");
                             alert.setContentText("il suo livello di certificazione per questa area è base 1");
                             alert.showAndWait();
-                            toggleGroup.selectToggle(null);
                             switch (area){
                                 case 1:
                                     alf = "base 1";
                                     break;
                                 case 2:
                                     com = "base 1";
+                                    break;
                                 case 3:
                                     creaz = "base 1";
                                     break;
@@ -107,23 +115,8 @@ public class HelloController {
                                     problemi = "base 1";
                                     break;
                             }
-                            area++;
-                            cont=0;
-                            switch(area){
-                                case 2:
-                                    comunicazione.showAndWait();
-                                    break;
-                                case 3:
-                                    creazione.showAndWait();
-                                    break;
-                                case 4:
-                                    sic.showAndWait();
-                                    break;
-                                case 5:
-                                    probl.showAndWait();
-                                    break;
-                            }
-                           setDomanda(area,1);
+                            resetArea();
+
                         }
                         break;
                     case 2:
@@ -160,25 +153,7 @@ public class HelloController {
                                         problemi = "base 2";
                                         break;
                                 }
-                                cont= 0;
-                                area++;
-                                intermed= 0;
-                                // qua sempre la gen con lo switch per i messaggi
-                                switch(area){
-                                    case 2:
-                                        comunicazione.showAndWait();
-                                        break;
-                                    case 3:
-                                        creazione.showAndWait();
-                                        break;
-                                    case 4:
-                                        sic.showAndWait();
-                                        break;
-                                    case 5:
-                                        probl.showAndWait();
-                                        break;
-                                }
-                                setDomanda(area,1);
+                                resetArea();
 
                             }else if (selezione.equals(corretta)) {
                                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -212,24 +187,7 @@ public class HelloController {
                                     problemi = "base 2";
                                     break;
                             }
-                            area++;
-                            cont=0;
-                            intermed= 0;
-                            switch(area){
-                                case 2:
-                                    comunicazione.showAndWait();
-                                    break;
-                                case 3:
-                                    creazione.showAndWait();
-                                    break;
-                                case 4:
-                                    sic.showAndWait();
-                                    break;
-                                case 5:
-                                    probl.showAndWait();
-                                    break;
-                            }
-                            setDomanda(area,1);
+                            resetArea();
 
                         }
                        break;
@@ -292,10 +250,7 @@ public class HelloController {
                                     problemi = "intermedio 3";
                                     break;
                             }
-                            area++;
-                            cont = 0;
-                            intermed = 0;
-                            // qua sempre la gen con la nuova area
+                            resetArea();
                         }
                         break;
                     case 8:
@@ -319,7 +274,7 @@ public class HelloController {
                         }
                         setDomanda(area,4);
                         break;
-                    case 11:// la prossima area va comunque generata qua
+                    case 11:
                         conferma.showAndWait();
                         if (selezione.equals(corretta)) {//quarto messaggio
                             intermed++;
@@ -347,10 +302,7 @@ public class HelloController {
                                     problemi = "avanzato 5";
                                     break;
                             }
-                            area++;
-                            intermed= 0;
-                            cont= 0;
-                            // sempre la gen
+                            resetArea();
                         }else{
                             //dai intermedio 4
                             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -376,12 +328,7 @@ public class HelloController {
                                     break;
 
                             }
-                            area++;
-                            intermed = 0;
-                            cont= 0;
-                        }
-                        if(area ==5){
-                            // vai alla pagina di certificazione
+                            resetArea();
                         }
                 }
 
@@ -424,6 +371,85 @@ public class HelloController {
             radioButtonc.setText(answers.get(2));
             radioButtond.setText(answers.get(3));
         }
+        @FXML
+        public void resetArea() throws Exception{
+            area++;
+            cont=0;
+            intermed= 0;
+            switch(area){
+                case 2:
+                    comunicazione.showAndWait();
+                    break;
+                case 3:
+                    creazione.showAndWait();
+                    break;
+                case 4:
+                    sic.showAndWait();
+                    break;
+                case 5:
+                    probl.showAndWait();
+                    break;
+                case 6:
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Risultati");
+                    alert.setHeaderText("Risultati");
+                    alert.setContentText("congratulazioni, hai finito il test. procederai al risultato");
+                    alert.showAndWait();
+                    apriSecondoStage();
+            }
+            if(area!=6){
+                setDomanda(area,1);
+            }
+        }
+    private void apriSecondoStage() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("schermata_finale.fxml"));
+            Parent root = loader.load();
+
+            // Crea e mostra il nuovo stage
+            Stage nuovoStage = new Stage();
+            nuovoStage.setTitle("Seconda Finestra");
+            nuovoStage.setScene(new Scene(root));
+            nuovoStage.show();
+
+            // Chiudi lo stage corrente cercando lo stage attivo tra tutte le finestre
+            for (Window window : Stage.getWindows()) {
+                if (window.isShowing() && window != nuovoStage) {
+                    ((Stage) window).close();
+                    break; // chiudiamo solo la finestra attuale
+                }
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public String getalf(){
+            return alf;
+    }
+    public String getcom(){
+        return com;
+    }
+    public String getcreaz(){
+            return creaz;
+    }
+    public String getsic(){
+            return sicurezza;
+    }
+    public String getprob(){
+            return problemi;
+    }
+    public void setLivello(int area, String livello) throws Exception{
+            switch (area){
+                case 1->alf=livello;
+                case 2->com=livello;
+                case 3->creaz=livello;
+                case 4->sicurezza=livello;
+                case 5->problemi=livello;
+            }
+    }
+
+
 }
 
 
