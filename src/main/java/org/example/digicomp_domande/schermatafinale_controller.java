@@ -159,4 +159,16 @@ public class schermatafinale_controller {
     public void setAlf(String livello){
         alf=livello;
     }
+    public void setCom(String livello){
+        com=livello;
+    }
+    public void setCreaz(String livello){
+        creaz=livello;
+    }
+    public void setSicurezza(String livello){
+        sic=livello;
+    }
+    public void setProb(String livello){
+        prob=livello;
+    }
 }
