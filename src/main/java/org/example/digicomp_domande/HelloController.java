@@ -388,12 +388,6 @@ public class HelloController {
                     System.out.println(creaz);
                     System.out.println(sicurezza);
                     System.out.println(problemi);
-                    a=alf;
-                    b=com;
-                    c=creaz;
-                    d=sicurezza;
-                    e=problemi;
-
                     apriSecondoStage();
             }
             if(area!=6){
@@ -427,21 +421,6 @@ public class HelloController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-    public String getalf(){
-            return a;
-    }
-    public String getcom(){
-        return b;
-    }
-    public String getcreaz(){
-            return c;
-    }
-    public String getsic(){
-            return d;
-    }
-    public String getprob(){
-            return e;
     }
     public void setLivello(int area, String livello) throws Exception{
             switch (area){
