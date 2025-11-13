@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="448.0" prefWidth="516.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.digicomp_domande.schermatafinale_controller">
+   <children>
+      <Label layoutX="156.0" layoutY="20.0" text="Congratulazioni, ecco il suo certificato" />
+      <Label layoutX="77.0" layoutY="37.0" text="il candidato ha consuguito nelle seguenti categorie con il risultato di" />
+      <Label layoutX="32.0" layoutY="76.0" text="Alfabetizzazione su informazioni e dati" />
+      <TextField layoutX="32.0" layoutY="99.0" />
+      <Label layoutX="32.0" layoutY="136.0" text="Comunicazione e collaborazione" />
+      <TextField layoutX="32.0" layoutY="153.0" />
+      <Label layoutX="32.0" layoutY="187.0" text="Creazioni con contenuti digitali" />
+      <TextField layoutX="32.0" layoutY="204.0" />
+      <Label layoutX="32.0" layoutY="239.0" text="Sicurezza" />
+      <TextField layoutX="32.0" layoutY="256.0" />
+      <Label layoutX="32.0" layoutY="289.0" text="Risolvere i problemi" />
+      <TextField layoutX="32.0" layoutY="306.0" />
+      <Label layoutX="72.0" layoutY="350.0" text="Con tali punteggi ottenuti le viene conferito come punteggio generale:" />
+      <TextField layoutX="100.0" layoutY="374.0" />
+      <Button layoutX="279.0" layoutY="375.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="160.0" text="Genera" />
+   </children>
+</AnchorPane>

@@ -1490,7 +1490,7 @@ const questions = {
         domanda: "Cosa fare se il browser non carica pagine?",
         rispostaCorretta: "Verificare la connessione e cancellare cache e cookie",
         risposteErrate: ["Spegnere il computer", "Cambiare monitor", "Disinstallare il sistema operativo"],
-        area: 4,
+        area: 5,
         livelloDifficolta: 2
     },
     212: {
@@ -1560,7 +1560,7 @@ const questions = {
         domanda: "Cosa fare se un software mostra errori sconosciuti?",
         rispostaCorretta: "Consultare il log degli errori e la documentazione ufficiale",
         risposteErrate: ["Disinstallare tutto il computer", "Ignorare l’errore", "Spegnere il monitor"],
-        area: 4,
+        area: 5,
         livelloDifficolta: 3
     },
     222: {
@@ -1630,7 +1630,7 @@ const questions = {
         domanda: "Come risolvere problemi complessi di rete aziendale?",
         rispostaCorretta: "Analizzare topologia, log dei dispositivi e configurazioni avanzate",
         risposteErrate: ["Spegnere tutti i computer", "Cambiare solo i cavi", "Ignorare il problema"],
-        area: 4,
+        area: 5,
         livelloDifficolta: 4
     },
     232: {

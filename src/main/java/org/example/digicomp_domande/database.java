@@ -218,6 +218,91 @@ public static void connect() throws SQLException, ClassNotFoundException {
                 5,
                 1
         );
+        inserisciDomanda(
+                "Qual è un vantaggio principale dei calendari condivisi online?",
+                "Permettono di coordinare riunioni e scadenze tra più persone",
+                "Proteggono il computer dai virus, Creano backup automatici, Modificano i file PDF",
+                2,
+                2
+        );
+        inserisciDomanda(
+                "Cosa significa ‘protocollo di comunicazione’ in informatica?",
+                "Regole che consentono lo scambio di informazioni tra sistemi",
+                "Un tipo di computer, Un software di grafica, Un file musicale",
+                2,
+                3
+        );
+        inserisciDomanda(
+                "Cosa significa ‘gestione dei conflitti online’?",
+                "Risolvere controversie tra utenti rispettando le regole",
+                "Cancellare tutti i messaggi, Bloccare gli utenti a caso, Modificare il contenuto del server",
+                2,
+                4
+        );
+        inserisciDomanda(
+                "Quale funzione permette di ridimensionare un’immagine senza distorcerla?",
+                "Mantieni proporzioni",
+                "Ritaglia automatico, Inverti colori, Duplica livello",
+                3,
+                2
+        );
+        inserisciDomanda(
+                "Cosa significa ‘effetto trasparenza’ in un’immagine?",
+                "Rendere parti dell’immagine semi-trasparenti",
+                "Modificare solo il colore, Aumentare la dimensione del file, Bloccare il livello",
+                3,
+                3
+        );
+        inserisciDomanda(
+                "Cosa significa 'masking avanzato' in grafica digitale?",
+                "Applicare maschere precise per modificare parti specifiche dell’immagine",
+                "Stampare un’immagine, Ridurre il peso del file, Aggiungere filtri automatici",
+                3,
+                4
+        );
+        inserisciDomanda(
+                "Qual è la funzione di un backup regolare?",
+                "Salvare copie dei dati per proteggerli da perdita",
+                "Aumentare la velocità del computer, Cancellare file vecchi, Modificare la password automaticamente",
+                4,
+                2
+        );
+        inserisciDomanda(
+                "Cosa significa sniffing di rete?",
+                "Intercettare e analizzare i dati che transitano in rete",
+                "Stampare dati online, Cancellare dati dal server, Bloccare virus locali",
+                4,
+                3
+        );
+        inserisciDomanda(
+                "Cosa significa sandboxing?",
+                "Eseguire programmi in un ambiente isolato per testare o contenere minacce",
+                "Eliminare tutti i virus, Aggiornare sistema operativo, Cancellare file temporanei",
+                4,
+                4
+        );
+        inserisciDomanda(
+                "Cosa fare se il browser non carica pagine?",
+                "Verificare la connessione e cancellare cache e cookie",
+                "Spegnere il computer, Cambiare monitor, Disinstallare il sistema operativo",
+                5,
+                2
+        );
+        inserisciDomanda(
+                "Cosa fare se un software mostra errori sconosciuti?",
+                "Consultare il log degli errori e la documentazione ufficiale",
+                "Disinstallare tutto il computer, Ignorare l’errore, Spegnere il monitor",
+                5,
+                3
+        );
+        inserisciDomanda(
+                "Come risolvere problemi complessi di rete aziendale?",
+                "Analizzare topologia, log dei dispositivi e configurazioni avanzate",
+                "Spegnere tutti i computer, Cambiare solo i cavi, Ignorare il problema",
+                5,
+                4
+        );
+
 
 
 
