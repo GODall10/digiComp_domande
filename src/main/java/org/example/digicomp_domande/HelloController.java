@@ -74,7 +74,7 @@ public class HelloController {
         sic.setContentText("la quarta area di competenza riguarderà Sicurezza");
         probl.setTitle("Benvenuto");
         probl.setHeaderText("Benvenuto");
-        probl.setContentText("la quinta area di competenza riguarderà Sicurezza");
+        probl.setContentText("la quinta area di competenza riguarderà Risoluzione di problemi");
         toggleGroup = new ToggleGroup();
         radioButtona.setToggleGroup(toggleGroup);
         radioButtonb.setToggleGroup(toggleGroup);
