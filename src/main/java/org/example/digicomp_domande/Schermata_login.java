@@ -78,7 +78,6 @@ public class Schermata_login {
                         alert.setHeaderText("Successo!");
                         alert.setContentText("i tuoi dati sono stati registati con successo: \n nome: " + nome_login.getText() + "\n pasword:  " + pasword_login.getText());
                         alert.showAndWait();
-                        System.out.println("Registrazione: " + nome_login.getText() + "\n" + pasword_login.getText());
                     });
                 }
 
@@ -124,7 +123,6 @@ public class Schermata_login {
         } else {
             Utils utils = new Utils();
             log=nome_login.getText();
-            System.out.println(log);
             utils.setUsername(log);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Successo");
