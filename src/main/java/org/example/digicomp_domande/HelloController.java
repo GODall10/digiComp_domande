@@ -74,7 +74,7 @@ public class HelloController {
         sic.setContentText("la quarta area di competenza riguarderà Sicurezza");
         probl.setTitle("Benvenuto");
         probl.setHeaderText("Benvenuto");
-        probl.setContentText("la quinta area di competenza riguarderà Sicurezza");
+        probl.setContentText("la quinta area di competenza riguarderà Risoluzione di problemi");
         toggleGroup = new ToggleGroup();
         radioButtona.setToggleGroup(toggleGroup);
         radioButtonb.setToggleGroup(toggleGroup);
@@ -295,7 +295,6 @@ public class HelloController {
             radioButtonb.setText(answers.get(1));
             radioButtonc.setText(answers.get(2));
             radioButtond.setText(answers.get(3));
-            System.out.println(username);
         }
         @FXML
         public void resetArea() throws Exception{
