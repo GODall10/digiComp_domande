@@ -6,7 +6,6 @@ module org.example.digicomp_domande {
     requires org.kordamp.bootstrapfx.core;
     requires java.desktop;
     requires java.sql;
-    requires mysql.connector.java;
     requires javafx.graphics;
 
     opens org.example.digicomp_domande to javafx.fxml;
