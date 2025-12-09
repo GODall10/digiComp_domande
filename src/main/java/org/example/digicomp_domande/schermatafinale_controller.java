@@ -51,7 +51,7 @@ public class schermatafinale_controller {
         d = calcoloMedia(sic);
         e = calcoloMedia(prob);
         somma = a + b + c + d + e;
-        risultato = Math.round(somma / 5);
+        risultato = Math.round((float) somma / 5);
         switch (risultato) {
             case 1:
                 ris = "base 1";

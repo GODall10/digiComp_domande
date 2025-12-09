@@ -295,7 +295,6 @@ public class HelloController {
             radioButtonb.setText(answers.get(1));
             radioButtonc.setText(answers.get(2));
             radioButtond.setText(answers.get(3));
-            System.out.println(username);
         }
         @FXML
         public void resetArea() throws Exception{
