@@ -7,10 +7,9 @@ import java.util.logging.Logger;
 public class database {
 
     // 🔹 Costanti di connessione
-    private final static String URL = "jdbc:mysql://database-1.cx0gqu8gcqef.eu-central-1.rds.amazonaws.com:3306/login"
-            + "?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
-    private final static String USER = "admin";
-    private final static String PASSWORD = "Alessio12$";
+    private final static String URL = "jdbc:mysql://api.lestingi.it:3306/database";
+    private final static String USER = "alessio";
+    private final static String PASSWORD = "UYTrfu56yljk!IYJU5";
     private final static String DRIVER = "com.mysql.cj.jdbc.Driver";
 
     // 🔹 Query SQL
@@ -37,7 +36,7 @@ public class database {
     private static Statement stmt;
     private static PreparedStatement pstmt;
 
-    /*public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
 
         try {
             // Carico il driver (opzionale nelle versioni moderne, ma buono per compatibilità)
@@ -56,7 +55,10 @@ public class database {
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(database.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }*/
+        creaTabella();
+        connect();
+        chiudiTabella();
+    }
 
     //  Metodo per creare la tabella
     private static void creaTabella() throws SQLException {

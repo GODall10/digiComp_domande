@@ -4,10 +4,9 @@ import java.sql.*;
 
 public class db_certificazione {
     private final static String URL =
-            "jdbc:mysql://database-1.cx0gqu8gcqef.eu-central-1.rds.amazonaws.com:3306/login"
-                    + "?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
-    private final static String USER = "admin";
-    private final static String PASSWORD = "Alessio12$";
+            "jdbc:mysql://api.lestingi.it:3306/database";
+    private final static String USER = "alessio";
+    private final static String PASSWORD = "UYTrfu56yljk!IYJU5";
     private final static String DRIVER = "com.mysql.cj.jdbc.Driver";
     private static String INSERT = "INSERT INTO tabella (domanda) VALUES (?)";
     private final static String DROP_TABLE = "DROP TABLE IF EXISTS tabella";
