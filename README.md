@@ -8,5 +8,4 @@ Per informazioni, contattatemi. Il database ha 3 tabelle. C'è la funzionalità 
 L'ultima funzionalità è l'algoritmo di certificazione generale, basato sulla media di tutti i livelli.
 La seguente funzionalità ha ancora degli errori di arrotondamento (funzionalità in fase di sviluppo). L'applicazione non richiede collegamento a dei server e l'accesso al database avviene tramite driver originale integrato di java (jdbc). L'inferfaccia è fatta con 
 javaFX ed openJDK 25.
-// ES (wip)
-el prototipo de l'aplicación es perfecto. El json original esta incuido ne l'aplicación por agregar nuevas preguntas  
+
